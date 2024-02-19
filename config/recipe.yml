@@ -18,6 +18,10 @@ modules:
           # put configuration files you want in /etc/ on a booted system
           # in /usr/etc/ in the image. read more in files module reference.
 
+  - type: gschema-overrides
+    include:
+      - zz1-defaults.gschema.override
+
   - type: rpm-ostree
     repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkg.cloudflare.com/cloudflared-ascii.repo

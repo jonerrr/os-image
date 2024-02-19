@@ -12,19 +12,42 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - usr: /usr
+      - usr:
+          /usr
           # copies config/files/usr into your image's /usr.
-          # put configuration files you want in /etc/ on a booted system 
+          # put configuration files you want in /etc/ on a booted system
           # in /usr/etc/ in the image. read more in files module reference.
 
   - type: rpm-ostree
     repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://pkg.cloudflare.com/cloudflared-ascii.repo
+      # - https://copr.fedorainfracloud.org/coprs/kylegospo/prompt/repo/fedora-%OS_VERSION%/kylegospo-prompt-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
     install:
+      - distrobox
+      - neovim
+      - cloudflared
+      # - prompt
+      # - vte291
+      # - vte-profile
+      - libadwaita
+      - nautilus-open-any-terminal
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-just-perfection
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-system76-scheduler
+      - system76-scheduler
+      - nerd-fonts
       # - micro
       # - starship
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      - gnome-classic-session
+      - gnome-tour
+      - gnome-terminal-nautilus
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -35,6 +58,21 @@ modules:
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - org.mozilla.firefox
+        - dev.k8slens.OpenLens
+        - tv.plex.PlexDesktop
+        - net.lutris.Lutris
+        - com.getpostman.Postman
+        - rest.insomnia.Insomnia
+        - org.prismlauncher.PrismLauncher
+        - org.qbittorrent.qBittorrent
+        - com.redis.RedisInsight
+        - hu.kramo.Cartridges
+        - org.gnome.Geary
+        - io.github.yuki_iptv.yuki-iptv
+        - com.github.marhkb.Pods
+        - org.gtk.Gtk3theme.adw-gtk3
+        - org.gtk.Gtk3theme.adw-gtk3-dark
+        - dev.lizardbyte.app.Sunshine
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
         # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
@@ -42,5 +80,41 @@ modules:
         # Installing different branches of the same Flatpak is not supported.
       remove:
         # - org.gnome.eog
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://nightly.gnome.org/gnome-nightly.flatpakrepo
+      repo-name: gnome-nightly
+      install:
+        - org.gnome.Ptyxis.Devel
+
+  - type: script
+    scripts:
+      - appimagelauncher.sh
+      - misc.sh
+
+  - type: systemd
+    user:
+      enabled: syncthing.container
+    system:
+      enabled: dconf-update.service
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://valent.andyholmes.ca/valent.flatpakrepo
+      repo-name: valent
+      install:
+        - ca.andyholmes.Valent
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add "Nerd Font" suffix.
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

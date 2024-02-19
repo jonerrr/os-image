@@ -1,5 +1,5 @@
 ublue_variants:
-  - label: blue-build/template
+  - label: jonerrr/os-image
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: blue-build/template
+      - label: os-image

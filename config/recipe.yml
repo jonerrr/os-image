@@ -10,9 +10,9 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: gschema-overrides-new
-    include:
-      - zz1-defaults.gschema.override
+  # - type: gschema-overrides-new
+  #   include:
+  #     - zz1-defaults.gschema.override
 
   - type: files
     files:

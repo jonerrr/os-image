@@ -25,18 +25,14 @@ modules:
   - type: rpm-ostree
     repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkg.cloudflare.com/cloudflared-ascii.repo
-      # - https://copr.fedorainfracloud.org/coprs/kylegospo/prompt/repo/fedora-%OS_VERSION%/kylegospo-prompt-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
     install:
       - distrobox
       - neovim
       - cloudflared
       - restic
-      # - prompt
-      # - vte291
-      # - vte-profile
+      - rclone
       - libadwaita
       - nautilus-open-any-terminal
       - gnome-shell-extension-appindicator
@@ -44,7 +40,6 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-system76-scheduler
       - system76-scheduler
-      - nerd-fonts
       # - micro
       # - starship
     remove:

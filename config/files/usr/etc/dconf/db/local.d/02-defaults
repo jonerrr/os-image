@@ -1,11 +1,11 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
-command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=dae7a166e4a779e0722c89ca65d3deb1 --new-window'
+command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=dae7a166e4a779e0722c89ca65d3deb1'
 name='Ptyxis default'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Control><Alt>d'
-command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=b4ee3ec0088ba120ba9ac19765d3debe --new-window'
+command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=b4ee3ec0088ba120ba9ac19765d3debe'
 name='Ptyxis Dev'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]

@@ -61,7 +61,7 @@ modules:
         - dev.k8slens.OpenLens
         - tv.plex.PlexDesktop
         - net.lutris.Lutris
-        - com.getpostman.Postman
+        # - com.getpostman.Postman
         - rest.insomnia.Insomnia
         - org.prismlauncher.PrismLauncher
         - org.qbittorrent.qBittorrent
@@ -74,6 +74,14 @@ modules:
         - org.gtk.Gtk3theme.adw-gtk3-dark
         - dev.lizardbyte.app.Sunshine
         - io.github.celluloid_player.Celluloid
+        - com.valvesoftware.Steam
+        - com.github.hluk.copyq
+        - com.obsproject.Studio
+        - dev.lizardbyte.app.Sunshine
+        - com.todoist.Todoist
+        - com.github.tchx84.Flatseal
+        - com.spotify.Client
+        - com.discordapp.Discord
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
         # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),

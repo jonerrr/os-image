@@ -33,6 +33,7 @@ modules:
       - distrobox
       - neovim
       - cloudflared
+      - restic
       # - prompt
       # - vte291
       # - vte-profile
@@ -99,6 +100,8 @@ modules:
     scripts:
       - appimagelauncher.sh
       - misc.sh
+      - firefox-gnome-theme.sh
+      - resticprofile.sh
 
   - type: systemd
     user:

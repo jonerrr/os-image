@@ -13,9 +13,6 @@ modules:
   # - type: gschema-overrides-new
   #   include:
   #     - zz1-defaults.gschema.override
-  - type: akmods
-    install:
-      - v4l2loopback
 
   - type: files
     files:
@@ -24,12 +21,16 @@ modules:
           # copies config/files/usr into your image's /usr.
           # put configuration files you want in /etc/ on a booted system
           # in /usr/etc/ in the image. read more in files module reference.
+  - type: akmods
+    install:
+      - v4l2loopback
 
   - type: rpm-ostree
     repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkg.cloudflare.com/cloudflared-ascii.repo
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/meeuw/droidcam/repo/fedora-%OS_VERSION%/droidcam-%OS_VERSION%.repo
     install:
       - distrobox
       - neovim
@@ -44,6 +45,7 @@ modules:
       - gnome-shell-extension-system76-scheduler
       - system76-scheduler
       - libappindicator-gtk3
+      - droidcam
       # - micro
       # - starship
     remove:
@@ -124,14 +126,14 @@ modules:
       install:
         - ca.andyholmes.Valent
 
-  # - type: fonts
-  #   fonts:
-  #     nerd-fonts:
-  #       - FiraCode # don't add "Nerd Font" suffix.
-  #       - NerdFontsSymbolsOnly
-  # google-fonts:
-  #   - Roboto
-  #   - Open Sans
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add "Nerd Font" suffix.
+        - NerdFontsSymbolsOnly
+      # google-fonts:
+      #   - Roboto
+      #   - Open Sans
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

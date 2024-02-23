@@ -36,7 +36,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
-      # - https://copr.fedorainfracloud.org/coprs/meeuw/droidcam/repo/fedora-%OS_VERSION%/droidcam-%OS_VERSION%.repo
     install:
       - distrobox
       - neovim
@@ -51,8 +50,6 @@ modules:
       - gnome-shell-extension-system76-scheduler
       - system76-scheduler
       - scrcpy
-      # - libappindicator-gtk3
-      # - droidcam
       # - micro
       # - starship
     remove:

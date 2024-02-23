@@ -13,6 +13,9 @@ modules:
   # - type: gschema-overrides-new
   #   include:
   #     - zz1-defaults.gschema.override
+  - type: akmods
+    install:
+      - v4l2loopback
 
   - type: files
     files:
@@ -40,6 +43,7 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-system76-scheduler
       - system76-scheduler
+      - libappindicator-gtk3
       # - micro
       # - starship
     remove:

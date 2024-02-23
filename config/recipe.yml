@@ -126,14 +126,14 @@ modules:
       install:
         - ca.andyholmes.Valent
 
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - FiraCode # don't add "Nerd Font" suffix.
-        - NerdFontsSymbolsOnly
-      # google-fonts:
-      #   - Roboto
-      #   - Open Sans
+  # - type: fonts
+  #   fonts:
+  #     nerd-fonts:
+  #       - FiraCode # don't add "Nerd Font" suffix.
+  #       - NerdFontsSymbolsOnly
+  # google-fonts:
+  #   - Roboto
+  #   - Open Sans
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

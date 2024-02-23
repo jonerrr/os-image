@@ -23,7 +23,7 @@ sort-directories-first=true
 show-create-link=true
 
 [com/github/stunkymonkey/nautilus-open-any-terminal]
-terminal='ptyxis'
+terminal='ptyxis-nightly'
 keybindings=''
 new-tab=false
 flatpak='system'

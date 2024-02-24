@@ -50,6 +50,7 @@ modules:
       - gnome-shell-extension-system76-scheduler
       - system76-scheduler
       - scrcpy
+      - setroubleshoot
       # - micro
       # - starship
     remove:

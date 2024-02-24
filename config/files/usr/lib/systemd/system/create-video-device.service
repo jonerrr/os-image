@@ -1,0 +1,10 @@
+[Unit]
+Description=v4l2loopback device creation
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/v4l2loopback-ctl add
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

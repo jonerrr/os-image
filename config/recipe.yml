@@ -61,12 +61,43 @@ modules:
       - gnome-terminal-nautilus
 
   - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://nightly.gnome.org/gnome-nightly.flatpakrepo
+      repo-name: gnome-nightly
+      install:
+        - org.gnome.Ptyxis.Devel
+
+  - type: script
+    scripts:
+      - appimagelauncher.sh
+      - misc.sh
+      - firefox-gnome-theme.sh
+      - resticprofile.sh
+
+  - type: systemd
+    user:
+      enabled: syncthing.container
+    system:
+      enabled:
+        - dconf-update.service
+        - create-video-device.service
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://valent.andyholmes.ca/valent.flatpakrepo
+      repo-name: valent
+      install:
+        - ca.andyholmes.Valent
+
+  - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - org.mozilla.firefox
         - dev.k8slens.OpenLens
@@ -101,37 +132,6 @@ modules:
       remove:
         - org.gnome.Totem
         # - org.gnome.eog
-
-  - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://nightly.gnome.org/gnome-nightly.flatpakrepo
-      repo-name: gnome-nightly
-      install:
-        - org.gnome.Ptyxis.Devel
-
-  - type: script
-    scripts:
-      - appimagelauncher.sh
-      - misc.sh
-      - firefox-gnome-theme.sh
-      - resticprofile.sh
-
-  - type: systemd
-    user:
-      enabled: syncthing.container
-    system:
-      enabled:
-        - dconf-update.service
-        - create-video-device.service
-
-  - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://valent.andyholmes.ca/valent.flatpakrepo
-      repo-name: valent
-      install:
-        - ca.andyholmes.Valent
 
   - type: fonts
     fonts:

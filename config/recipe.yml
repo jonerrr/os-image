@@ -83,6 +83,7 @@ modules:
         - com.spotify.Client
         - com.discordapp.Discord
         - org.gnome.Loupe
+        - org.gnome.Calculator
         - org.libreoffice.LibreOffice
       remove:
         - org.gnome.Totem
@@ -106,7 +107,6 @@ modules:
   - type: containerfile
     snippets:
       - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
-      - RUN curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 
   - type: akmods
     install:
@@ -116,7 +116,6 @@ modules:
     scripts:
       - appimagelauncher.sh
       - hide-terminal.sh
-      # - firefox-gnome-theme.sh
       - resticprofile.sh
 
   - type: systemd

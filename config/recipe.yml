@@ -67,6 +67,7 @@ modules:
         - org.qbittorrent.qBittorrent
         - com.redis.RedisInsight
         - hu.kramo.Cartridges
+        - com.usebottles.bottles
         - org.gnome.Geary
         - io.github.yuki_iptv.yuki-iptv
         - com.github.marhkb.Pods

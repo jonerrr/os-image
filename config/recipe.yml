@@ -86,6 +86,7 @@ modules:
         - org.gnome.Loupe
         - org.gnome.Calculator
         - org.libreoffice.LibreOffice
+        - org.gnome.Weather
       remove:
         - org.gnome.Totem
 

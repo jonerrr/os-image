@@ -44,6 +44,7 @@ modules:
       - scrcpy
       - setroubleshoot
       - flatpak-xdg-utils
+      - syncthing
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -122,8 +123,8 @@ modules:
       - resticprofile.sh
 
   - type: systemd
-    user:
-      enabled: syncthing.container
+    # user:
+    #   enabled: syncthing.container
     system:
       enabled:
         - dconf-update.service

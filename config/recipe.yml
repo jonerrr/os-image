@@ -114,9 +114,9 @@ modules:
   #     install:
   #       - ca.andyholmes.Valent
 
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
+  # - type: containerfile
+  #   snippets:
+  #     - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 
   - type: akmods
     install:

@@ -97,6 +97,7 @@ modules:
         - org.gnome.Weather
         - org.gnome.Calendar
         - com.bitwarden.desktop
+        - org.gnome.clocks
       remove:
         - org.gnome.Totem
 

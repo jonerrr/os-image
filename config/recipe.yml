@@ -96,6 +96,7 @@ modules:
         - org.libreoffice.LibreOffice
         - org.gnome.Weather
         - org.gnome.Calendar
+        - com.bitwarden.desktop
       remove:
         - org.gnome.Totem
 
@@ -115,9 +116,9 @@ modules:
   #     install:
   #       - ca.andyholmes.Valent
 
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
+  # - type: containerfile
+  #   snippets:
+  #     - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 
   - type: akmods
     install:

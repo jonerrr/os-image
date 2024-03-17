@@ -17,22 +17,24 @@ name='Suspend'
 switch-group=['<Super>Escape']
 switch-group-backward=['<Shift><Super>Escape']
 
-[org.gnome.shell]
-favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'com.discordapp.Discord.desktop', 'dev-code.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Ptyxis.Devel.desktop', 'hu.kramo.Cartridges.desktop', 'org.gnome.Geary.desktop', 'com.todoist.Todoist.desktop', 'com.spotify.Client.desktop', 'org.prismlauncher.PrismLauncher.desktop', 'tv.plex.PlexDesktop.desktop']
-
-[org.gnome.desktop.interface]
-color-scheme='prefer-dark'
 
 [org.gnome.desktop.peripherals.mouse]
 accel-profile='flat'
 
-[org.gnome.shell.extensions.just-perfection.animation]
+[org.gnome.shell]
+disabled-extensions=['background-logo@fedorahosted.org']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'just-perfection-desktop@just-perfection', 's76-scheduler@mattjakeman.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'com.discordapp.Discord.desktop', 'dev-code.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Ptyxis.Devel.desktop', 'hu.kramo.Cartridges.desktop', 'org.mozilla.Thunderbird.desktop', 'com.todoist.Todoist.desktop', 'com.spotify.Client.desktop', 'org.prismlauncher.PrismLauncher.desktop', 'tv.plex.PlexDesktop.desktop']
+
+[org.gnome.shell.extensions.just-perfection]
 animation=4
 theme=true
 osd-position=3
 
 [org.gnome.desktop.interface]
 gtk-theme='adw-gtk3-dark'
+color-scheme='prefer-dark'
+clock-format='12h'
 
 [org.gtk.settings.file-chooser]
 sort-directories-first=true

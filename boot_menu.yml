@@ -1,5 +1,0 @@
-ublue_variants:
-  - label: jonerrr/os-image
-    ks: /kickstart/ublue-os.ks
-    flavors:
-      - label: os-image

@@ -28,11 +28,13 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
-      - https://gist.githubusercontent.com/jonerrr/211c9b2bfdf1872afdc697738f510db1/raw/3e738c896f68447c193c75a705cb5bfefd250e94/vscode.repo
+      # - https://gist.githubusercontent.com/jonerrr/211c9b2bfdf1872afdc697738f510db1/raw/3e738c896f68447c193c75a705cb5bfefd250e94/vscode.repo
     install:
       - distrobox
+      - podman-compose
       - neovim
       - cloudflared
+      # - code
       - restic
       - rclone
       - libadwaita
@@ -76,9 +78,9 @@ modules:
         - com.redis.RedisInsight
         - hu.kramo.Cartridges
         - com.usebottles.bottles
-        - org.gnome.Geary
+        - org.mozilla.Thunderbird
         - io.github.yuki_iptv.yuki-iptv
-        - com.github.marhkb.Pods
+        - io.podman_desktop.PodmanDesktop
         - org.gtk.Gtk3theme.adw-gtk3
         - org.gtk.Gtk3theme.adw-gtk3-dark
         - dev.lizardbyte.app.Sunshine
@@ -98,6 +100,9 @@ modules:
         - org.gnome.Calendar
         - com.bitwarden.desktop
         - org.gnome.clocks
+        - org.gnome.Evince
+        - com.github.IsmaelMartinez.teams_for_linux
+        - org.gimp.GIMP
       remove:
         - org.gnome.Totem
 
@@ -117,10 +122,6 @@ modules:
   #     install:
   #       - ca.andyholmes.Valent
 
-  # - type: containerfile
-  #   snippets:
-  #     - COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
-
   - type: akmods
     install:
       - v4l2loopback
@@ -132,8 +133,8 @@ modules:
       - resticprofile.sh
 
   - type: systemd
-    # user:
-    #   enabled: syncthing.container
+    user:
+      enabled: syncthing
     system:
       enabled:
         - dconf-update.service

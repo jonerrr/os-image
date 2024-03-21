@@ -15,12 +15,12 @@ name='Suspend'
 
 [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3.binding]
 binding='<Control><Alt><Super>b'
-command='gnome-monitor-config set -LM DP-0 -LpM DP-2 -x 1920'
+command='gnome-monitor-config set -LM DP-0 -m 1920x1080@119.982 -LpM DP-2 -m 1920x1080@119.982 -x 1920'
 name='Primary Display 2'
 
 [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3.binding]
 binding='<Control><Alt><Super>c'
-command='gnome-monitor-config set -LpM DP-0 -LM DP-2 -x 1920'
+command='gnome-monitor-config set -LpM DP-0 -m 1920x1080@119.982 -LM DP-2 -m 1920x1080@119.982 -x 1920'
 name='Primary Display 1'
 
 [org.gnome.desktop.wm.keybindings]

@@ -108,6 +108,8 @@ modules:
         - org.gnome.Evince
         - com.github.IsmaelMartinez.teams_for_linux
         - org.gimp.GIMP
+        - org.pulseaudio.pavucontrol
+        - com.github.marinm.songrec
       remove:
         - org.gnome.Totem
 

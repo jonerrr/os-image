@@ -129,6 +129,10 @@ modules:
   #     install:
   #       - ca.andyholmes.Valent
 
+  - type: bling
+    install:
+      - dconf-update-service
+
   - type: akmods
     install:
       - v4l2loopback

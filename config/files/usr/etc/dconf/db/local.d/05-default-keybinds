@@ -1,28 +1,27 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
-command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=b1bab92cbb01c6acd152bd5065db63e0'
-name='Ptyxis default'
+command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=9abec27335c93afa73a4200265f2e740'
+name='Ptyxis Main'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Control><Alt>d'
-command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=b18c258f795fbfa0bb448f7665db6ff2'
-name='Ptyxis Dev'
+command='flatpak run org.gnome.Ptyxis.Devel --tab-with-profile=76927fd0e55b4ab9a06b268065f2edc0'
+name='Ptyxis Devbox'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Shift><Alt><Super>s'
 command='systemctl suspend'
 name='Suspend'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Control><Alt><Super>b'
 command='gnome-monitor-config set -LM DP-0 -m 1920x1080@119.982 -LpM DP-2 -m 1920x1080@119.982 -x 1920'
 name='Primary Display 2'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Control><Alt><Super>c'
 command='gnome-monitor-config set -LpM DP-0 -m 1920x1080@119.982 -LM DP-2 -m 1920x1080@119.982 -x 1920'
 name='Primary Display 1'
 
 [org/gnome/desktop/wm/keybindings]
 switch-group=['<Super>Escape']
-switch-group-backward=['<Shift><Super>Escape']

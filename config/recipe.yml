@@ -133,9 +133,9 @@ modules:
   #     install:
   #       - ca.andyholmes.Valent
 
-  - type: bling
-    install:
-      - dconf-update-service
+  # - type: bling
+  #   install:
+  #     - dconf-update-service
 
   - type: akmods
     install:

@@ -1,0 +1,11 @@
+[Unit]
+Description=Update the dconf database onboot
+Documentation=https://github.com/coreos/rpm-ostree/issues/1944
+
+[Service]
+Type=oneshot
+Environment="DCONF_PROFILE=/etc/dconf/profile/"
+ExecStart=/usr/bin/dconf update
+
+[Install]
+WantedBy=multi-user.target

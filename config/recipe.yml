@@ -138,9 +138,9 @@ modules:
   #   install:
   #     - dconf-update-service
 
-  - type: akmods
-    install:
-      - v4l2loopback
+  # - type: akmods
+    # install:
+      # - v4l2loopback
 
   - type: script
     scripts:

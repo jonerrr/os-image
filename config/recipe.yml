@@ -139,8 +139,14 @@ modules:
   #     - dconf-update-service
 
   # - type: akmods
-    # install:
-      # - v4l2loopback
+  # install:
+  # - v4l2loopback
+
+  - type: gnome-extensions
+    install:
+      - VitalsCoreCoding.com.v67
+      # - appindicatorsupportrgcjonas.gmail.com.v57
+      # - just-perfection-desktopjust-perfection.v28
 
   - type: script
     scripts:

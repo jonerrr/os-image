@@ -114,6 +114,7 @@ modules:
         - org.gimp.GIMP
         - org.pulseaudio.pavucontrol
         - com.github.marinm.songrec
+        - io.dbeaver.DBeaverCommunity
       remove:
         - org.gnome.Totem
 

@@ -5,7 +5,7 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-nvidia
-image-version: 39 # latest is also supported if you want new updates ASAP
+image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -67,8 +67,6 @@ modules:
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - gnome-classic-session
-      - gnome-tour
       - gnome-terminal-nautilus
 
   - type: default-flatpaks
@@ -138,15 +136,13 @@ modules:
   #   install:
   #     - dconf-update-service
 
-  # - type: akmods
-  # install:
-  # - v4l2loopback
+  - type: akmods
+    install:
+      - v4l2loopback
 
   - type: gnome-extensions
     install:
       - VitalsCoreCoding.com.v67
-      # - appindicatorsupportrgcjonas.gmail.com.v57
-      # - just-perfection-desktopjust-perfection.v28
 
   - type: script
     scripts:

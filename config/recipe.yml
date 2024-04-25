@@ -143,6 +143,7 @@ modules:
   - type: gnome-extensions
     install:
       - VitalsCoreCoding.com.v67
+      - mediacontrolscliffniff.github.com.v36
 
   - type: script
     scripts:

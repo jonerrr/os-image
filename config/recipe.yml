@@ -144,6 +144,7 @@ modules:
     install:
       - VitalsCoreCoding.com.v67
       - mediacontrolscliffniff.github.com.v36
+      - fullscreen-avoidernoobsai.github.com.v12
 
   - type: script
     scripts:

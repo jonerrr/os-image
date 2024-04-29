@@ -115,6 +115,7 @@ modules:
         - org.pulseaudio.pavucontrol
         - com.github.marinm.songrec
         - io.dbeaver.DBeaverCommunity
+        - io.github.Foldex.AdwSteamGtk
       remove:
         - org.gnome.Totem
 

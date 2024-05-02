@@ -172,5 +172,6 @@ modules:
       google-fonts:
         - Roboto
         - Open Sans
+        - Fira Sans
 
   - type: signing

@@ -25,3 +25,6 @@ name='Second Display Primary'
 
 [org/gnome/desktop/wm/keybindings]
 switch-group=['<Super>Escape']
+
+[/org/gnome/nautilus/icon-view]
+captions=['size', 'date_modified', 'none']

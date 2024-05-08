@@ -45,8 +45,8 @@ modules:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-just-perfection
       - gnome-shell-extension-blur-my-shell
-      - gnome-shell-extension-system76-scheduler
-      - system76-scheduler
+      # - gnome-shell-extension-system76-scheduler
+      # - system76-scheduler
       - scrcpy
       - setroubleshoot
       - flatpak-xdg-utils

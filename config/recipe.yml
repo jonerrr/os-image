@@ -90,7 +90,8 @@ modules:
         - com.redis.RedisInsight
         - hu.kramo.Cartridges
         - com.usebottles.bottles
-        - org.mozilla.Thunderbird
+        # - org.mozilla.Thunderbird
+        - org.gnome.Geary
         - io.github.yuki_iptv.yuki-iptv
         - io.podman_desktop.PodmanDesktop
         - org.gtk.Gtk3theme.adw-gtk3

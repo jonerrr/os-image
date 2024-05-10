@@ -30,8 +30,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
-      # - https://gist.githubusercontent.com/jonerrr/211c9b2bfdf1872afdc697738f510db1/raw/3e738c896f68447c193c75a705cb5bfefd250e94/vscode.repo
+      # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
       - distrobox
       - podman-compose
@@ -67,7 +66,7 @@ modules:
       - ddcui
       - libgda
       - libgda-sqlite
-      - cosmic-desktop
+      # - cosmic-desktop
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -91,7 +90,7 @@ modules:
         - hu.kramo.Cartridges
         - com.usebottles.bottles
         # - org.mozilla.Thunderbird
-        - org.gnome.Geary
+        - org.gnome.Gearyior
         - io.github.yuki_iptv.yuki-iptv
         - io.podman_desktop.PodmanDesktop
         - org.gtk.Gtk3theme.adw-gtk3

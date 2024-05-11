@@ -157,6 +157,7 @@ modules:
       - appimagelauncher.sh
       - hide-terminal.sh
       - resticprofile.sh
+      - fonts.sh
 
   - type: systemd
     user:

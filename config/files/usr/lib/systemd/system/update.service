@@ -1,0 +1,10 @@
+[Unit]
+Description=Update image everyday
+
+[Service]
+Type=oneshot
+ExecStart=rpm-ostree upgrade
+
+
+[Install]
+WantedBy=multi-user.target

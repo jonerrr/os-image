@@ -1,0 +1,10 @@
+[Unit]
+Description=Update image timer
+Requires=update.service
+
+[Timer]
+Unit=update.service
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

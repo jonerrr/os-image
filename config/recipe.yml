@@ -166,6 +166,7 @@ modules:
       enabled:
         - dconf-update.service
         - create-video-device.service
+        - update.timer
 
   - type: fonts
     fonts:

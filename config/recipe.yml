@@ -66,6 +66,7 @@ modules:
       - ddcui
       - libgda
       - libgda-sqlite
+      - livecd-tools
       # - cosmic-desktop
     remove:
       - firefox # default firefox removed in favor of flatpak

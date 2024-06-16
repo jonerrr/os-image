@@ -43,7 +43,7 @@ modules:
       - nautilus-open-any-terminal
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-just-perfection
-      - gnome-shell-extension-blur-my-shell
+      # - gnome-shell-extension-blur-my-shell
       # - gnome-shell-extension-system76-scheduler
       # - system76-scheduler
       - scrcpy
@@ -59,14 +59,15 @@ modules:
       - unrar
       - p7zip
       - gnome-monitor-config
-      - nushell
+      # - nushell
       - libgtop2-devel
       - lm_sensors
       - ddcutil
       - ddcui
+      # for pano clipboard manager extension
       - libgda
       - libgda-sqlite
-      - livecd-tools
+      # - livecd-tools
       # - cosmic-desktop
     remove:
       - firefox # default firefox removed in favor of flatpak
@@ -142,6 +143,8 @@ modules:
   # - type: bling
   #   install:
   #     - dconf-update-service
+
+  - type: brew
 
   - type: akmods
     install:

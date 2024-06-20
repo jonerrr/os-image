@@ -67,6 +67,7 @@ modules:
       # for pano clipboard manager extension
       - libgda
       - libgda-sqlite
+      - chntpw
       # - livecd-tools
       # - cosmic-desktop
     remove:

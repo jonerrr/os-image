@@ -3,7 +3,7 @@ Description=Update image everyday
 
 [Service]
 Type=oneshot
-ExecStart=rpm-ostree upgrade
+ExecStart=ujust update
 
 
 [Install]

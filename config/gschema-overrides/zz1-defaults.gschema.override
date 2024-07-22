@@ -25,8 +25,7 @@ sort-directories-first=true
 sort-directories-first=true
 
 [com.github.stunkymonkey.nautilus-open-any-terminal]
-terminal='ptyxis-nightly'
+terminal='ptyxis'
 keybindings=''
-new-tab=false
 flatpak='system'
 

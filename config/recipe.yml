@@ -83,7 +83,7 @@ modules:
       repo-title: "Flathub (system-wide)"
       install:
         - org.mozilla.firefox
-        - dev.k8slens.OpenLens
+        # - dev.k8slens.OpenLens
         - tv.plex.PlexDesktop
         - net.lutris.Lutris
         - rest.insomnia.Insomnia

@@ -68,6 +68,7 @@ modules:
       - libgda
       - libgda-sqlite
       - chntpw
+      - bridge-utils
       # - livecd-tools
       # - cosmic-desktop
     remove:

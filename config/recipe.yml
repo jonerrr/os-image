@@ -69,6 +69,7 @@ modules:
       - libgda-sqlite
       - chntpw
       - bridge-utils
+      - waydroid
       # - livecd-tools
       # - cosmic-desktop
     remove:

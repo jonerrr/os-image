@@ -30,6 +30,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
+      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
       - distrobox
@@ -71,6 +72,7 @@ modules:
       - bridge-utils
       - waydroid
       - lzip
+      - tailscale
       # - livecd-tools
       # - cosmic-desktop
     remove:

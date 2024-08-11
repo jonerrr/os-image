@@ -8,3 +8,5 @@ get-flatpaks:
     flatpak remote-add --if-not-exists GNOME-Nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo && flatpak remote-add --if-not-exists Valent https://valent.andyholmes.ca/valent.flatpakrepo && flatpak install org.gnome.Ptyxis.Devel && flatpak install ca.andyholmes.Valent
 dconf:
     sudo dconf load / < /etc/dconf/db/local.d/05-default-keybinds
+vm-gpu:
+    sudo rpm-ostree kargs --append-if-missing="vfio-pci.ids=10de:1c03,10de:10f1"

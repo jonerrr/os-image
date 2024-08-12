@@ -124,6 +124,7 @@ modules:
         - com.github.marinm.songrec
         - io.dbeaver.DBeaverCommunity
         - io.github.Foldex.AdwSteamGtk
+        - app.drey.Damask
       remove:
         - org.gnome.Totem
 

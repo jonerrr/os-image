@@ -27,6 +27,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/matte-schwartz/sunshine/repo/fedora-%OS_VERSION%/sunshine-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
@@ -70,6 +71,7 @@ modules:
       - waydroid
       - lzip
       - tailscale
+      - sunshine
       # - livecd-tools
       # - cosmic-desktop
     remove:
@@ -100,12 +102,11 @@ modules:
         - io.podman_desktop.PodmanDesktop
         - org.gtk.Gtk3theme.adw-gtk3
         - org.gtk.Gtk3theme.adw-gtk3-dark
-        - dev.lizardbyte.app.Sunshine
         - io.github.celluloid_player.Celluloid
         - com.valvesoftware.Steam
         - com.github.hluk.copyq
         - com.obsproject.Studio
-        - dev.lizardbyte.app.Sunshine
+        # - dev.lizardbyte.app.Sunshine
         - com.todoist.Todoist
         - com.github.tchx84.Flatseal
         - com.spotify.Client

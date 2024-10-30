@@ -157,14 +157,23 @@ modules:
 
   - type: gnome-extensions
     install:
-      - VitalsCoreCoding.com.v67
-      - mediacontrolscliffniff.github.com.v36
-      - fullscreen-avoidernoobsai.github.com.v12
+      - Vitals
+      - Airpod Battery Monitor
+      - Compiz windows effect
+      - Desktop Cube
+      - Fullscreen Avoider
+      - 4470 # Media Controls
+      - Weather O'Clock
+      - AppIndicator and KStatusNotifierItem Support
+      - Just Perfection
+      # - VitalsCoreCoding.com.v6
+      # - mediacontrolscliffniff.github.com.v36
+      # - fullscreen-avoidernoobsai.github.com.v12
 
   - type: script
     scripts:
       - appimagelauncher.sh
-      - hide-terminal.sh
+      # - hide-terminal.sh
       - resticprofile.sh
       - fonts.sh
 

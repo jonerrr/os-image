@@ -185,6 +185,8 @@ modules:
         - dconf-update.service
         - create-video-device.service
         - update.timer
+        - libvirt-workaround.service
+        - swtpm-workaround.service
 
   - type: fonts
     fonts:

@@ -2,7 +2,7 @@
 Description=start webcam
 
 [Service]
-ExecStart=scrcpy --v4l2-sink=/dev/video1 --video-source=camera --no-audio --no-video-playback --camera-size=1440x1080
+ExecStart=scrcpy --v4l2-sink=/dev/video1 --video-source=camera --no-audio --no-video-playback --no-window --camera-size=1440x1080
 
 [Install]
 WantedBy=multi-user.target

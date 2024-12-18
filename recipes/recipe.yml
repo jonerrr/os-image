@@ -6,14 +6,18 @@ base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 modules:
+  - type: files
+    files:
+      - source: etc
+        destination: /etc
+      - source: usr
+        destination: /usr
+      # - source: system
+      #   destination: /
+
   - type: gschema-overrides
     include:
       - zz1-defaults.gschema.override
-
-  - type: files
-    files:
-      - source: system
-        destination: "/"
 
   - type: rpm-ostree
     repos:
@@ -123,16 +127,9 @@ modules:
         - io.dbeaver.DBeaverCommunity
         - io.github.Foldex.AdwSteamGtk
         - app.drey.Damask
+        - it.mijorus.gearlever
       remove:
         - org.gnome.Totem
-
-  # - type: default-flatpaks
-  #   notify: true
-  #   system:
-  #     repo-url: https://nightly.gnome.org/gnome-nightly.flatpakrepo
-  #     repo-name: gnome-nightly
-  #     install:
-  #       - org.gnome.Ptyxis.Devel
 
   # - type: default-flatpaks
   #   notify: true
@@ -166,8 +163,6 @@ modules:
 
   - type: script
     scripts:
-      - appimagelauncher.sh
-      # - hide-terminal.sh
       - resticprofile.sh
       - fonts.sh
 

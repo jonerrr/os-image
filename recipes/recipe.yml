@@ -73,6 +73,7 @@ modules:
       - tailscale
       - sunshine
       - usbmuxd
+      - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
       # - livecd-tools
       # - cosmic-desktop
     remove:
@@ -164,7 +165,7 @@ modules:
   - type: script
     scripts:
       - resticprofile.sh
-      - fonts.sh
+      # - fonts.sh
 
   - type: systemd
     user:

@@ -190,4 +190,6 @@ modules:
         - Open Sans
         - Fira Sans
 
+  - type: initramfs
+
   - type: signing

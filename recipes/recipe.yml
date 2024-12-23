@@ -161,6 +161,7 @@ modules:
       - Weather O'Clock
       - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
+      - 517 # Caffeine
 
   - type: script
     scripts:

@@ -9,6 +9,6 @@ get-flatpaks:
 dconf:
     sudo dconf load / < /etc/dconf/db/local.d/05-default-keybinds
 vm-gpu-kargs:
-    sudo rpm-ostree kargs --append-if-missing="vfio-pci.ids=10de:1c03,10de:10f1" && sudo rpm-ostree kargs --append-if-missing="intel_iommu=on" && sudo rpm-ostree kargs --append-if-missing "iommu=pt" && sudo rpm-ostree kargs --append-if-missing "rd.driver.pre=vfio_pci"
+    sudo rpm-ostree kargs --append-if-missing="intel_iommu=on" --append-if-missing "iommu=pt" --append-if-missing "rd.driver.pre=vfio_pci" --append-if-missing="vfio-pci.ids=10de:1c03,10de:10f1"
 vm-gpu-initramfs:
     sudo rpm-ostree initramfs --enable --arg="add-drivers" --arg="vfio-pci"

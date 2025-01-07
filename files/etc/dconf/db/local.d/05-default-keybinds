@@ -15,12 +15,12 @@ name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Control><Alt><Super>v'
-command='bash /var/home/jonah/Documents/vm_display.sh'
+command='ujust vm-display'
 name='VM display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Control><Alt><Super>h'
-command='bash /var/home/jonah/Documents/host_display.sh'
+command='ujust host-display'
 name='Host display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]

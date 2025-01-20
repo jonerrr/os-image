@@ -38,3 +38,6 @@ switch-group=['<Super>Escape']
 
 [org/gnome/nautilus/icon-view]
 captions=['size', 'date_modified', 'none']
+
+[org/gnome/shell/extensions/pano]
+global-shortcut=['<Super>V']

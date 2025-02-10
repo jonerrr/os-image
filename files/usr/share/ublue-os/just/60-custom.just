@@ -1,7 +1,5 @@
 create-devbox:
     distrobox-create --name dev --image ghcr.io/jonerrr/devbox:latest --pull --nvidia --additional-flags '--publish-all'
-firefox-gnome-theme:
-    curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 get-flatpaks:
     flatpak remote-add --if-not-exists GNOME-Nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo && flatpak remote-add --if-not-exists Valent https://valent.andyholmes.ca/valent.flatpakrepo && flatpak install ca.andyholmes.Valent
 dconf:

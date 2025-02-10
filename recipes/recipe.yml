@@ -130,6 +130,7 @@ modules:
   #       - io.github.Foldex.AdwSteamGtk
   #       - app.drey.Damask
   #       - it.mijorus.gearlever
+  #       - dev.qwery.AddWater
   #     remove:
   #       - org.gnome.Totem
 

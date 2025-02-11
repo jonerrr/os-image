@@ -35,6 +35,7 @@ modules:
       - podman-compose
       - neovim
       - cloudflared
+      - adw-gtk3-theme
       # - code
       - restic
       - rclone
@@ -103,8 +104,8 @@ modules:
         - org.gnome.Geary
         - io.github.yuki_iptv.yuki-iptv
         - io.podman_desktop.PodmanDesktop
-        - org.gtk.Gtk3theme.adw-gtk3
-        - org.gtk.Gtk3theme.adw-gtk3-dark
+        # - org.gtk.Gtk3theme.adw-gtk3
+        # - org.gtk.Gtk3theme.adw-gtk3-dark
         - io.github.celluloid_player.Celluloid
         - com.valvesoftware.Steam
         - com.github.hluk.copyq
@@ -131,8 +132,8 @@ modules:
         - app.drey.Damask
         - it.mijorus.gearlever
         - dev.qwery.AddWater
-      remove:
-        - org.gnome.Totem
+      # remove:
+      #   - org.gnome.Totem
 
   # - type: default-flatpaks
   #   notify: true

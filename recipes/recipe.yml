@@ -82,57 +82,57 @@ modules:
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
       # - gnome-terminal-nautilus
 
-  # - type: default-flatpaks
-  #   notify: true # Send notification after install/uninstall is finished (true/false)
-  #   system:
-  #     repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-  #     repo-name: flathub
-  #     repo-title: "Flathub (system-wide)"
-  #     install:
-  #       - org.mozilla.firefox
-  #       # - dev.k8slens.OpenLens
-  #       - tv.plex.PlexDesktop
-  #       - net.lutris.Lutris
-  #       - rest.insomnia.Insomnia
-  #       - org.prismlauncher.PrismLauncher
-  #       - org.qbittorrent.qBittorrent
-  #       - com.redis.RedisInsight
-  #       - hu.kramo.Cartridges
-  #       - com.usebottles.bottles
-  #       # - org.mozilla.Thunderbird
-  #       - org.gnome.Geary
-  #       - io.github.yuki_iptv.yuki-iptv
-  #       - io.podman_desktop.PodmanDesktop
-  #       - org.gtk.Gtk3theme.adw-gtk3
-  #       - org.gtk.Gtk3theme.adw-gtk3-dark
-  #       - io.github.celluloid_player.Celluloid
-  #       - com.valvesoftware.Steam
-  #       - com.github.hluk.copyq
-  #       - com.obsproject.Studio
-  #       # - dev.lizardbyte.app.Sunshine
-  #       - com.todoist.Todoist
-  #       - com.github.tchx84.Flatseal
-  #       - com.spotify.Client
-  #       # - com.discordapp.Discord
-  #       - dev.vencord.Vesktop
-  #       - org.gnome.Loupe
-  #       - org.gnome.Calculator
-  #       - org.libreoffice.LibreOffice
-  #       - org.gnome.Weather
-  #       - org.gnome.Calendar
-  #       - com.bitwarden.desktop
-  #       - org.gnome.clocks
-  #       - org.gnome.Evince
-  #       - org.gimp.GIMP
-  #       - org.pulseaudio.pavucontrol
-  #       - com.github.marinm.songrec
-  #       - io.dbeaver.DBeaverCommunity
-  #       - io.github.Foldex.AdwSteamGtk
-  #       - app.drey.Damask
-  #       - it.mijorus.gearlever
-  #       - dev.qwery.AddWater
-  #     remove:
-  #       - org.gnome.Totem
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)"
+      install:
+        - org.mozilla.firefox
+        # - dev.k8slens.OpenLens
+        - tv.plex.PlexDesktop
+        - net.lutris.Lutris
+        - rest.insomnia.Insomnia
+        - org.prismlauncher.PrismLauncher
+        - org.qbittorrent.qBittorrent
+        - com.redis.RedisInsight
+        - hu.kramo.Cartridges
+        - com.usebottles.bottles
+        # - org.mozilla.Thunderbird
+        - org.gnome.Geary
+        - io.github.yuki_iptv.yuki-iptv
+        - io.podman_desktop.PodmanDesktop
+        - org.gtk.Gtk3theme.adw-gtk3
+        - org.gtk.Gtk3theme.adw-gtk3-dark
+        - io.github.celluloid_player.Celluloid
+        - com.valvesoftware.Steam
+        - com.github.hluk.copyq
+        - com.obsproject.Studio
+        # - dev.lizardbyte.app.Sunshine
+        - com.todoist.Todoist
+        - com.github.tchx84.Flatseal
+        - com.spotify.Client
+        # - com.discordapp.Discord
+        - dev.vencord.Vesktop
+        - org.gnome.Loupe
+        - org.gnome.Calculator
+        - org.libreoffice.LibreOffice
+        - org.gnome.Weather
+        - org.gnome.Calendar
+        - com.bitwarden.desktop
+        - org.gnome.clocks
+        - org.gnome.Evince
+        - org.gimp.GIMP
+        - org.pulseaudio.pavucontrol
+        - com.github.marinm.songrec
+        - io.dbeaver.DBeaverCommunity
+        - io.github.Foldex.AdwSteamGtk
+        - app.drey.Damask
+        - it.mijorus.gearlever
+        - dev.qwery.AddWater
+      remove:
+        - org.gnome.Totem
 
   # - type: default-flatpaks
   #   notify: true

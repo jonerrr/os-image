@@ -108,7 +108,6 @@ modules:
         # - org.gtk.Gtk3theme.adw-gtk3-dark
         - io.github.celluloid_player.Celluloid
         - com.valvesoftware.Steam
-        - com.github.hluk.copyq
         - com.obsproject.Studio
         # - dev.lizardbyte.app.Sunshine
         - com.todoist.Todoist

@@ -98,7 +98,7 @@ modules:
         - org.prismlauncher.PrismLauncher
         - org.qbittorrent.qBittorrent
         - com.redis.RedisInsight
-        - hu.kramo.Cartridges
+        - page.kramo.Cartridges
         - com.usebottles.bottles
         # - org.mozilla.Thunderbird
         - org.gnome.Geary

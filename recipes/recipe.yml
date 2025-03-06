@@ -75,6 +75,7 @@ modules:
       - sunshine
       - usbmuxd
       - fish
+      - zulucrypt
       - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
       # - livecd-tools
       # - cosmic-desktop

@@ -165,7 +165,7 @@ modules:
       - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
       - 517 # Caffeine
-
+      - GSConnect
   - type: script
     scripts:
       - resticprofile.sh

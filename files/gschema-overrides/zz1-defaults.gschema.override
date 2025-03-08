@@ -4,7 +4,7 @@ accel-profile='flat'
 [org.gnome.shell]
 disabled-extensions=['background-logo@fedorahosted.org']
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'just-perfection-desktop@just-perfection']
-favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'com.discordapp.Discord.desktop', 'dev-code.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Ptyxis.Devel.desktop', 'hu.kramo.Cartridges.desktop', 'org.mozilla.Thunderbird.desktop', 'com.todoist.Todoist.desktop', 'com.spotify.Client.desktop', 'org.prismlauncher.PrismLauncher.desktop', 'tv.plex.PlexDesktop.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Ptyxis.desktop', 'com.spotify.Client.desktop', 'com.todoist.Todoist.desktop', 'com.discordapp.Discord.desktop', 'dev-code.desktop', 'tv.plex.PlexDesktop.desktop', 'virt-manager.desktop', 'org.gnome.Geary.desktop', 'com.usebottles.bottles.desktop']
 
 [org.gnome.shell.extensions.just-perfection]
 animation=4
@@ -21,9 +21,3 @@ sort-directories-first=true
 
 [org.gtk.gtk4.settings.file-chooser]
 sort-directories-first=true
-
-[com.github.stunkymonkey.nautilus-open-any-terminal]
-terminal='ptyxis'
-keybindings=''
-flatpak='system'
-

@@ -1,11 +1,14 @@
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']
+
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
-command='flatpak run app.devsuite.Ptyxis --tab-with-profile=d41121e9e9cf7cb66d2d11bf66836a13'
+command='ptyxis --tab-with-profile=5abd12e72cb48785763d45a667ca33b5'
 name='Ptyxis Main'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Control><Alt>d'
-command='flatpak run app.devsuite.Ptyxis --tab-with-profile=8516b73a647e091d031f14c666845209'
+command='ptyxis --tab-with-profile=3373975282c05cd6b158b27167cb8224'
 name='Ptyxis Devbox'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]

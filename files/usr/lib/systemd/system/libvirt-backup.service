@@ -5,5 +5,5 @@ After=network.target
 [Service]
 Type=oneshot
 User=root
-ExecStartPre=/bin/mkdir -p /home/jonah/vms
-ExecStart=/usr/sbin/vm-backup.sh
+ExecStartPre=/bin/mkdir -p /home/jonah/qemu
+ExecStart=/bin/cp -r /etc/libvirt/qemu/* /home/jonah/qemu/

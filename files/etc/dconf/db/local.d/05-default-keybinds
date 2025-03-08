@@ -44,3 +44,6 @@ captions=['size', 'date_modified', 'none']
 
 [org/gnome/shell/extensions/pano]
 global-shortcut=['<Super>V']
+history-length=400
+play-audio-on-copy=false
+send-notification-on-copy=false

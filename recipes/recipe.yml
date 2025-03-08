@@ -166,6 +166,7 @@ modules:
       - Just Perfection
       - 517 # Caffeine
       - GSConnect
+      - Brightness control using ddcutil
   - type: script
     scripts:
       - resticprofile.sh

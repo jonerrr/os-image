@@ -160,7 +160,7 @@ modules:
       - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
       - 517 # Caffeine
-      - GSConnect
+      # - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
 

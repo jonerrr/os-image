@@ -13,9 +13,9 @@ modules:
       - source: usr
         destination: /usr
 
-  - type: containerfile
-    snippets:
-      - RUN chmod +x /etc/libvirt/hooks/daemon
+  # - type: containerfile
+  #   snippets:
+  #     - RUN chmod +x /etc/libvirt/hooks/daemon
 
   - type: gschema-overrides
     include:

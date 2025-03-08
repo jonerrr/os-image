@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Define output directory
+VM_BACKUP_DIR="/home/jonah/vms"
+
+# Ensure backup directory exists
+mkdir -p "$VM_BACKUP_DIR"
+
+# Export all VMs
+for vm in $(virsh list --all --name); do
+    if [ -n "$vm" ]; then
+        # echo "Exporting VM: $vm"
+        virsh dumpxml "$vm" >"$VM_BACKUP_DIR/${vm}.xml"
+    fi
+done
+
+# Fix permissions
+chown -R jonah:jonah "$VM_BACKUP_DIR"
+
+exit 0

@@ -6,4 +6,4 @@ After=network.target
 Type=oneshot
 User=root
 ExecStartPre=/bin/mkdir -p /home/jonah/vms
-ExecStart=/bin/bash -c 'for vm in $(virsh list --all --name); do [ -n "$vm" ] && virsh dumpxml "$vm" > "/home/jonah/vms/${vm}.xml"; done'
+ExecStart=/usr/sbin/vm-backup.sh

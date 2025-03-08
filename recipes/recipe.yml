@@ -12,8 +12,6 @@ modules:
         destination: /etc
       - source: usr
         destination: /usr
-      # - source: system
-      #   destination: /
 
   - type: gschema-overrides
     include:
@@ -101,12 +99,9 @@ modules:
         - com.redis.RedisInsight
         - page.kramo.Cartridges
         - com.usebottles.bottles
-        # - org.mozilla.Thunderbird
         - org.gnome.Geary
         - io.github.yuki_iptv.yuki-iptv
         - io.podman_desktop.PodmanDesktop
-        # - org.gtk.Gtk3theme.adw-gtk3
-        # - org.gtk.Gtk3theme.adw-gtk3-dark
         - io.github.celluloid_player.Celluloid
         - com.valvesoftware.Steam
         - com.obsproject.Studio
@@ -167,6 +162,7 @@ modules:
       - 517 # Caffeine
       - GSConnect
       - Brightness control using ddcutil
+
   - type: script
     scripts:
       - resticprofile.sh
@@ -183,6 +179,8 @@ modules:
         - update.timer
         - libvirt-workaround.service
         - swtpm-workaround.service
+        # - libvirt-backup.service
+        # - libvirt-backup.timer
 
   - type: fonts
     fonts:

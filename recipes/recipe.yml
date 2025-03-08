@@ -162,6 +162,7 @@ modules:
       - 517 # Caffeine
       - GSConnect
       - Brightness control using ddcutil
+      - Grand Theft Focus
 
   - type: script
     scripts:

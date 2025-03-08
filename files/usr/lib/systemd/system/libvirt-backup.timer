@@ -1,0 +1,11 @@
+[Unit]
+Description=Run libvirt VM XML backup daily
+Requires=libvirt-backup.service
+
+[Timer]
+Unit=libvirt-backup.service
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

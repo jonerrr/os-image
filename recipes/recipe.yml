@@ -114,8 +114,8 @@ modules:
         - com.todoist.Todoist
         - com.github.tchx84.Flatseal
         - com.spotify.Client
-        # - com.discordapp.Discord
-        - dev.vencord.Vesktop
+        - com.discordapp.Discord
+        # - dev.vencord.Vesktop
         - org.gnome.Loupe
         - org.gnome.Calculator
         - org.libreoffice.LibreOffice
@@ -147,11 +147,11 @@ modules:
   #   install:
   #     - dconf-update-service
 
-  - type: brew
+  # - type: brew
 
-  - type: akmods
-    install:
-      - v4l2loopback
+  # - type: akmods
+  #   install:
+  #     - v4l2loopback
 
   - type: gnome-extensions
     install:

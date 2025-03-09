@@ -187,6 +187,7 @@ modules:
         - swtpm-workaround.service
         - libvirt-backup.service
         - libvirt-backup.timer
+        - tailscaled.service
 
   - type: fonts
     fonts:

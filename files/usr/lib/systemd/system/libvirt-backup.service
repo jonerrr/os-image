@@ -6,4 +6,4 @@ After=network.target
 Type=oneshot
 User=root
 ExecStartPre=/bin/mkdir -p /home/jonah/qemu
-ExecStart=/bin/cp -r /etc/libvirt/qemu/* /home/jonah/qemu/
+ExecStart=ExecStart=/bin/bash -c 'cp -r /etc/libvirt/qemu/* /home/jonah/qemu/'

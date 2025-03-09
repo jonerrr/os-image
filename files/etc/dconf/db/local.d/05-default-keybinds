@@ -12,7 +12,7 @@ command='ptyxis --tab-with-profile=3373975282c05cd6b158b27167cb8224'
 name='Ptyxis Devbox'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Shift><Alt><Super>s'
+binding='<Control><Alt><Super>s'
 command='systemctl suspend'
 name='Suspend'
 

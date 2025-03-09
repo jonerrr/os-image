@@ -131,6 +131,7 @@ modules:
         - app.drey.Damask
         - it.mijorus.gearlever
         - dev.qwery.AddWater
+        - com.github.johnfactotum.Foliate
       # remove:
       #   - org.gnome.Totem
 

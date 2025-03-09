@@ -185,8 +185,8 @@ modules:
         - update.timer
         - libvirt-workaround.service
         - swtpm-workaround.service
-        # - libvirt-backup.service
-        # - libvirt-backup.timer
+        - libvirt-backup.service
+        - libvirt-backup.timer
 
   - type: fonts
     fonts:

@@ -169,8 +169,6 @@ modules:
       # - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
-    uninstall:
-      - GSConnect
 
   - type: script
     scripts:

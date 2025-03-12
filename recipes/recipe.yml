@@ -134,6 +134,7 @@ modules:
         - dev.qwery.AddWater
         - com.github.johnfactotum.Foliate
         - net.sourceforge.jpdftweak.jPdfTweak
+        - io.github.ungoogled_software.ungoogled_chromium
       # remove:
       #   - org.gnome.Totem
 

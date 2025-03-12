@@ -133,6 +133,7 @@ modules:
         - it.mijorus.gearlever
         - dev.qwery.AddWater
         - com.github.johnfactotum.Foliate
+        - net.sourceforge.jpdftweak.jPdfTweak
       # remove:
       #   - org.gnome.Totem
 

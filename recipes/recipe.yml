@@ -78,8 +78,10 @@ modules:
       - usbmuxd
       - fish
       - zulucrypt
-      - gnome-shell-extension-gsconnect
       - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+      - gnome-shell-extension-gsconnect
+      - webextension-gsconnect
+      - nautilus-gsconnect
       # - livecd-tools
       # - cosmic-desktop
     remove:

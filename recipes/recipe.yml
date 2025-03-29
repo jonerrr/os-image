@@ -65,7 +65,7 @@ modules:
       - libgtop2-devel
       - lm_sensors
       - ddcutil
-      - ddcui
+      # - ddcui
       # for pano clipboard manager extension
       - libgda
       - libgda-sqlite

@@ -137,6 +137,7 @@ modules:
         - com.github.johnfactotum.Foliate
         - net.sourceforge.jpdftweak.jPdfTweak
         - io.github.ungoogled_software.ungoogled_chromium
+        - page.tesk.Refine
       # remove:
       #   - org.gnome.Totem
 

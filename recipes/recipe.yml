@@ -3,7 +3,7 @@ name: os-image
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-nvidia
-image-version: 41 # latest is also supported if you want new updates ASAP
+image-version: 42 # latest is also supported if you want new updates ASAP
 
 modules:
   - type: files
@@ -25,11 +25,11 @@ modules:
     repos:
       - https://pkg.cloudflare.com/cloudflared-ascii.repo
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
+      # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
+      # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/matte-schwartz/sunshine/repo/fedora-%OS_VERSION%/sunshine-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/lizardbyte/beta/repo/fedora-%OS_VERSION%/lizardbyte-beta-fedora-%OS_VERSION%.repo # sunshine
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
@@ -74,7 +74,7 @@ modules:
       - waydroid
       - lzip
       - tailscale
-      - sunshine
+      - Sunshine
       - usbmuxd
       - fish
       - zulucrypt
@@ -167,7 +167,7 @@ modules:
       - Fullscreen Avoider
       - 4470 # Media Controls
       - Weather O'Clock
-      - AppIndicator and KStatusNotifierItem Support
+      # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
       - 517 # Caffeine
       # - GSConnect

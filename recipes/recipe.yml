@@ -84,6 +84,7 @@ modules:
       - webextension-gsconnect
       - nautilus-gsconnect
       - intel-oneapi-vtune
+      # - kernel-devel
       # - livecd-tools
       # - cosmic-desktop
     optfix:
@@ -178,7 +179,8 @@ modules:
       # - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
-
+    uninstall:
+      - "5344"
   - type: script
     scripts:
       - resticprofile.sh

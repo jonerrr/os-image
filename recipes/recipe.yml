@@ -31,7 +31,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/lizardbyte/beta/repo/fedora-%OS_VERSION%/lizardbyte-beta-fedora-%OS_VERSION%.repo # sunshine
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      - https://gist.githubusercontent.com/jonerrr/b05877f03079f7e433351a84adaf3fb5/raw/fe67bf7bfcb5b4c0c9b199e1e6f0a2534381c30d/oneAPI.repo # vtune
+      # - https://gist.githubusercontent.com/jonerrr/b05877f03079f7e433351a84adaf3fb5/raw/fe67bf7bfcb5b4c0c9b199e1e6f0a2534381c30d/oneAPI.repo # vtune
       # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
       - distrobox
@@ -83,7 +83,6 @@ modules:
       - gnome-shell-extension-gsconnect
       - webextension-gsconnect
       - nautilus-gsconnect
-      - intel-oneapi-vtune
       # - kernel-devel
       # - livecd-tools
       # - cosmic-desktop
@@ -181,9 +180,11 @@ modules:
       - Grand Theft Focus
     uninstall:
       - "5344"
+
   - type: script
     scripts:
       - resticprofile.sh
+      # - vtune.sh
       # - fonts.sh
 
   - type: systemd
@@ -193,7 +194,7 @@ modules:
     system:
       enabled:
         - dconf-update.service
-        - create-video-device.service
+        # - create-video-device.service
         - update.timer
         - libvirt-workaround.service
         - swtpm-workaround.service

@@ -166,7 +166,7 @@ modules:
   - type: gnome-extensions
     install:
       - Vitals
-      - Airpod Battery Monitor
+      # - Airpod Battery Monitor
       - Compiz windows effect
       - Desktop Cube
       - Fullscreen Avoider

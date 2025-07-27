@@ -49,7 +49,7 @@ modules:
       # - gnome-shell-extension-blur-my-shell
       # - gnome-shell-extension-system76-scheduler
       # - system76-scheduler
-      - scrcpy
+      # - scrcpy
       - setroubleshoot
       - flatpak-xdg-utils
       - syncthing

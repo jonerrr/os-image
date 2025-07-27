@@ -26,7 +26,7 @@ modules:
       - https://pkg.cloudflare.com/cloudflared-ascii.repo
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
+      # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/lizardbyte/beta/repo/fedora-%OS_VERSION%/lizardbyte-beta-fedora-%OS_VERSION%.repo # sunshine
@@ -94,56 +94,52 @@ modules:
       # - gnome-terminal-nautilus
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      repo-title: "Flathub (system-wide)"
-      install:
-        - org.mozilla.firefox
-        # - dev.k8slens.OpenLens
-        - tv.plex.PlexDesktop
-        - net.lutris.Lutris
-        - rest.insomnia.Insomnia
-        - org.prismlauncher.PrismLauncher
-        - org.qbittorrent.qBittorrent
-        - com.redis.RedisInsight
-        - page.kramo.Cartridges
-        - com.usebottles.bottles
-        - org.gnome.Geary
-        - io.github.yuki_iptv.yuki-iptv
-        - io.podman_desktop.PodmanDesktop
-        - io.github.celluloid_player.Celluloid
-        - com.valvesoftware.Steam
-        - com.obsproject.Studio
-        # - dev.lizardbyte.app.Sunshine
-        - com.todoist.Todoist
-        - com.github.tchx84.Flatseal
-        - com.spotify.Client
-        - com.discordapp.Discord
-        # - dev.vencord.Vesktop
-        - org.gnome.Loupe
-        - org.gnome.Calculator
-        - org.libreoffice.LibreOffice
-        - org.gnome.Weather
-        - org.gnome.Calendar
-        - com.bitwarden.desktop
-        - org.gnome.clocks
-        - org.gnome.Evince
-        - org.gimp.GIMP
-        - org.pulseaudio.pavucontrol
-        - com.github.marinm.songrec
-        - io.dbeaver.DBeaverCommunity
-        - io.github.Foldex.AdwSteamGtk
-        - app.drey.Damask
-        - it.mijorus.gearlever
-        - dev.qwery.AddWater
-        - com.github.johnfactotum.Foliate
-        - net.sourceforge.jpdftweak.jPdfTweak
-        - io.github.ungoogled_software.ungoogled_chromium
-        - page.tesk.Refine
-      # remove:
-      #   - org.gnome.Totem
+    configurations:
+      - notify: false
+        scope: system
+        install:
+          - org.mozilla.firefox
+          # - dev.k8slens.OpenLens
+          - tv.plex.PlexDesktop
+          - net.lutris.Lutris
+          - rest.insomnia.Insomnia
+          - org.prismlauncher.PrismLauncher
+          - org.qbittorrent.qBittorrent
+          - com.redis.RedisInsight
+          - page.kramo.Cartridges
+          - com.usebottles.bottles
+          - org.gnome.Geary
+          - io.github.yuki_iptv.yuki-iptv
+          - io.podman_desktop.PodmanDesktop
+          - io.github.celluloid_player.Celluloid
+          - com.valvesoftware.Steam
+          - com.obsproject.Studio
+          # - dev.lizardbyte.app.Sunshine
+          - com.todoist.Todoist
+          - com.github.tchx84.Flatseal
+          - com.spotify.Client
+          - com.discordapp.Discord
+          # - dev.vencord.Vesktop
+          - org.gnome.Loupe
+          - org.gnome.Calculator
+          - org.libreoffice.LibreOffice
+          - org.gnome.Weather
+          - org.gnome.Calendar
+          - com.bitwarden.desktop
+          - org.gnome.clocks
+          - org.gnome.Evince
+          - org.gimp.GIMP
+          - org.pulseaudio.pavucontrol
+          - com.github.marinm.songrec
+          - io.dbeaver.DBeaverCommunity
+          - io.github.Foldex.AdwSteamGtk
+          - app.drey.Damask
+          - it.mijorus.gearlever
+          - dev.qwery.AddWater
+          - com.github.johnfactotum.Foliate
+          - net.sourceforge.jpdftweak.jPdfTweak
+          - io.github.ungoogled_software.ungoogled_chromium
+          - page.tesk.Refine
 
   # - type: default-flatpaks
   #   notify: true

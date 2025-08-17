@@ -83,6 +83,9 @@ modules:
       - gnome-shell-extension-gsconnect
       - webextension-gsconnect
       - nautilus-gsconnect
+      # osbuild stuff
+      - osbuild-composer
+      - composer-cli
       # - kernel-devel
       # - livecd-tools
       # - cosmic-desktop

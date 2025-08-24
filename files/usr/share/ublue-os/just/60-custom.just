@@ -1,5 +1,5 @@
 create-devbox:
-    distrobox-create --name dev --image ghcr.io/jonerrr/devbox:latest --pull --nvidia --additional-flags '--publish-all'
+    distrobox-assemble create --file https://raw.githubusercontent.com/jonerrr/devbox/refs/heads/main/distrobox.ini
 get-flatpaks:
     flatpak remote-add --if-not-exists GNOME-Nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo && flatpak remote-add --if-not-exists Valent https://valent.andyholmes.ca/valent.flatpakrepo && flatpak install ca.andyholmes.Valent
 dconf:

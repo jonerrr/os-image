@@ -23,7 +23,7 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://pkg.cloudflare.com/cloudflared-ascii.repo
+      # - https://pkg.cloudflare.com/cloudflared.repo
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
@@ -37,7 +37,7 @@ modules:
       - distrobox
       - podman-compose
       - neovim
-      - cloudflared
+      # - cloudflared
       - adw-gtk3-theme
       # - code
       - restic
@@ -79,7 +79,8 @@ modules:
       - usbmuxd
       - fish
       - zulucrypt
-      - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+      # dnf5 now requires packages to be signed, so msttcore fonts via rpm is broken for now
+      # - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
       - gnome-shell-extension-gsconnect
       - webextension-gsconnect
       - nautilus-gsconnect
@@ -151,17 +152,13 @@ modules:
   #     repo-name: valent
   #     install:
   #       - ca.andyholmes.Valent
-
   # - type: bling
   #   install:
   #     - dconf-update-service
-
   # - type: brew
-
   # - type: akmods
   #   install:
   #     - v4l2loopback
-
   - type: gnome-extensions
     install:
       - Vitals
@@ -169,7 +166,7 @@ modules:
       - Compiz windows effect
       - Desktop Cube
       - Fullscreen Avoider
-      - 4470 # Media Controls
+      # - 4470 # Media Controls
       - Weather O'Clock
       # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
@@ -177,8 +174,7 @@ modules:
       # - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
-    uninstall:
-      - "5344"
+    # uninstall:
 
   - type: script
     scripts:

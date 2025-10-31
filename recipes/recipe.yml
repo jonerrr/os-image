@@ -3,7 +3,7 @@ name: os-image
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-nvidia
-image-version: 42
+image-version: 43
 
 modules:
   - type: files

@@ -103,7 +103,6 @@ modules:
         scope: system
         install:
           - org.mozilla.firefox
-          # - dev.k8slens.OpenLens
           - tv.plex.PlexDesktop
           - net.lutris.Lutris
           - rest.insomnia.Insomnia
@@ -115,7 +114,7 @@ modules:
           - org.gnome.Geary
           - io.github.yuki_iptv.yuki-iptv
           - io.podman_desktop.PodmanDesktop
-          - io.github.celluloid_player.Celluloid
+          - org.gnome.Showtime
           - com.valvesoftware.Steam
           - com.obsproject.Studio
           # - dev.lizardbyte.app.Sunshine
@@ -131,7 +130,7 @@ modules:
           - org.gnome.Calendar
           - com.bitwarden.desktop
           - org.gnome.clocks
-          - org.gnome.Evince
+          - org.gnome.Papers
           - org.gimp.GIMP
           - org.pulseaudio.pavucontrol
           - com.github.marinm.songrec
@@ -139,11 +138,15 @@ modules:
           - io.github.Foldex.AdwSteamGtk
           - app.drey.Damask
           - it.mijorus.gearlever
-          - dev.qwery.AddWater
+          # - dev.qwery.AddWater
           - com.github.johnfactotum.Foliate
           - net.sourceforge.jpdftweak.jPdfTweak
           - io.github.ungoogled_software.ungoogled_chromium
           - page.tesk.Refine
+          - com.mattjakeman.ExtensionManager
+          - md.obsidian.Obsidian
+          - com.getpostman.Postman
+          - us.zoom.Zoom
 
   # - type: default-flatpaks
   #   notify: true

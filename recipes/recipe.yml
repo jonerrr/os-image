@@ -169,7 +169,7 @@ modules:
       - Compiz windows effect
       - Desktop Cube
       - Fullscreen Avoider
-      # - 4470 # Media Controls
+      - 4470 # Media Controls
       - Weather O'Clock
       # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection

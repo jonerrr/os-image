@@ -36,6 +36,7 @@ modules:
     install:
       - distrobox
       - podman-compose
+      - nvidia-container-toolkit
       - neovim
       # - cloudflared
       - adw-gtk3-theme
@@ -174,7 +175,7 @@ modules:
       # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
       - 517 # Caffeine
-      # - GSConnect
+      - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
     # uninstall:

@@ -82,7 +82,7 @@ modules:
       - zulucrypt
       # dnf5 now requires packages to be signed, so msttcore fonts via rpm is broken for now
       # - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-      - gnome-shell-extension-gsconnect
+      - gnome-shell-extension-gsconnect # Breaks if you install via extensions module
       - webextension-gsconnect
       - nautilus-gsconnect
       # osbuild stuff
@@ -175,10 +175,10 @@ modules:
       # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
       - 517 # Caffeine
-      - GSConnect
       - Brightness control using ddcutil
       - Grand Theft Focus
-    # uninstall:
+    uninstall:
+      - GSConnect
 
   - type: script
     scripts:

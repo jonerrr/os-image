@@ -177,8 +177,8 @@ modules:
       - 517 # Caffeine
       - Brightness control using ddcutil
       - Grand Theft Focus
-    uninstall:
-      - GSConnect
+    # uninstall:
+    #   - GSConnect
 
   - type: script
     scripts:

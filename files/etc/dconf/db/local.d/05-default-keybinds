@@ -28,12 +28,12 @@ name='Host display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding='<Control><Alt><Super>c'
-command='gnome-monitor-config set -LpM DP-1 -m 1920x1080@119.982 -LM HDMI-1 -m 1920x1080@119.982 -x 1920'
+command='gdctl set --logical-monitor --primary --monitor DP-1 --mode 1920x1080@119.982 --logical-monitor --monitor HDMI-1 --mode 1920x1080@119.982 --x 1920'
 name='First Display Primary'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
 binding='<Control><Alt><Super>b'
-command='gnome-monitor-config set -LM DP-1 -m 1920x1080@119.982 -LpM HDMI-1 -m 1920x1080@119.982 -x 1920'
+command='gdctl set --logical-monitor --monitor DP-1 --mode 1920x1080@119.982 --logical-monitor --primary --monitor HDMI-1 --mode 1920x1080@119.982 --x 1920'
 name='Second Display Primary'
 
 [org/gnome/desktop/wm/keybindings]

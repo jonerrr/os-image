@@ -38,7 +38,6 @@ modules:
       - podman-compose
       - nvidia-container-toolkit
       - neovim
-      # - cloudflared
       - adw-gtk3-theme
       # - code
       - restic
@@ -62,7 +61,6 @@ modules:
       - virt-viewer
       - unrar
       - p7zip
-      - gnome-monitor-config
       # - nushell
       - libgtop2-devel
       - lm_sensors

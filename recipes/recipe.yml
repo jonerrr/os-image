@@ -181,13 +181,12 @@ modules:
   - type: script
     scripts:
       - resticprofile.sh
-      # - vtune.sh
-      # - fonts.sh
 
   - type: systemd
     user:
       enabled:
-        - syncthing
+        - syncthing.service
+        - hide-waydroid-apps.path
     system:
       enabled:
         - dconf-update.service
@@ -195,7 +194,6 @@ modules:
         - update.timer
         - libvirt-workaround.service
         - swtpm-workaround.service
-        - libvirt-backup.service
         - libvirt-backup.timer
         - tailscaled.service
 

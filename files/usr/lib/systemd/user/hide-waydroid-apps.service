@@ -1,0 +1,7 @@
+[Unit]
+Description=Hide Waydroid Apps from App Grid
+After=gnome-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hide-waydroid-apps

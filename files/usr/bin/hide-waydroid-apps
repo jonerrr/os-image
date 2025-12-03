@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+# Loop through all Waydroid desktop files
+for file in ~/.local/share/applications/waydroid.*.desktop; do
+    # Check if the file exists and doesn't already have NoDisplay=true
+    if [ -f "$file" ] && ! grep -q "NoDisplay=true" "$file"; then
+        sed -i '/^Actions=/a NoDisplay=true' "$file"
+        echo "Hidden Waydroid app: $file"
+    fi
+done
+# Force GNOME to see the changes immediately
+update-desktop-database ~/.local/share/applications/

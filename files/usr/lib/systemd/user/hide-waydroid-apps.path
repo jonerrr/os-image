@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch for new Waydroid apps
+
+[Path]
+# Watch the user's application folder for changes
+PathChanged=%h/.local/share/applications
+
+[Install]
+WantedBy=default.target

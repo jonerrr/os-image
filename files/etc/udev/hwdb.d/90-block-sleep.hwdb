@@ -1,0 +1,3 @@
+# See hhttps://wiki.archlinux.org/title/Udev#Remap_specific_device
+evdev:input:b0003v046Dp4023e0111*
+ KEYBOARD_KEY_10082=reserved

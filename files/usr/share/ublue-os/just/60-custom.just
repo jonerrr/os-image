@@ -14,6 +14,9 @@ vm-display:
     ddcutil --bus 6 setvcp 60 0x01 & ddcutil --bus 7 setvcp 60 0x11 & wait
 host-display:
     ddcutil --bus 6 setvcp 60 0x11 & ddcutil --bus 7 setvcp 60 0x01 & wait
+# TODO: set both to 120hz once nvidia issue is fixed
+init-monitor-conf:
+    gdctl set --logical-monitor --primary --monitor DP-1 --mode 1920x1080@119.982 --logical-monitor --monitor HDMI-1 --mode 1920x1080@60.000 --x 1920
 cp-monitor-conf:
     sudo cp ~/.config/monitors.xml /etc/xdg/monitors.xml
 ollama:

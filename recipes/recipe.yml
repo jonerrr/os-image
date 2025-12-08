@@ -186,6 +186,8 @@ modules:
     user:
       enabled:
         - syncthing.service
+        - sunshine.service
+        - monitor-setup.service
         - hide-waydroid-apps.path
     system:
       enabled:

@@ -1,0 +1,14 @@
+[Unit]
+Description=Apply Monitor Configuration
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+# Ensure the script environment has access to the wayland/display variables
+Environment=XDG_SESSION_TYPE=wayland
+ExecStart=ujust init-monitor-conf
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical-session.target

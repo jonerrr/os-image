@@ -14,6 +14,8 @@ vm-display:
     ddcutil --bus 6 setvcp 60 0x01 & ddcutil --bus 7 setvcp 60 0x11 & wait
 host-display:
     ddcutil --bus 6 setvcp 60 0x11 & ddcutil --bus 7 setvcp 60 0x01 & wait
+cp-monitor-conf:
+    sudo cp ~/.config/monitors.xml /etc/xdg/monitors.xml
 ollama:
     podman run -d --security-opt label=type:nvidia_container_t --device nvidia.com/gpu=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 open-webui:

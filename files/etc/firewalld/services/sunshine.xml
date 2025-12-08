@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+    <short>Sunshine Game Stream</short>
+    <description>Ports required for Sunshine/Moonlight Game Streaming</description>
+    <port protocol="tcp" port="47984" />
+    <port protocol="tcp" port="47989" />
+    <port protocol="tcp" port="47990" />
+    <port protocol="tcp" port="48010" />
+    <port protocol="udp" port="47998" />
+    <port protocol="udp" port="47999" />
+    <port protocol="udp" port="48000" />
+    <port protocol="udp" port="48010" />
+</service>

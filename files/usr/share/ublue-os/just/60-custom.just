@@ -4,8 +4,6 @@ get-flatpaks:
     flatpak remote-add --if-not-exists GNOME-Nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo && flatpak remote-add --if-not-exists Valent https://valent.andyholmes.ca/valent.flatpakrepo && flatpak install ca.andyholmes.Valent
 dconf:
     sudo dconf load / < /etc/dconf/db/local.d/05-default-keybinds
-default-kargs:
-    sudo rpm-ostree kargs --append-if-missing="intel_iommu=on" --append-if-missing "iommu=pt" --append-if-missing "rd.driver.pre=vfio_pci" --append-if-missing="vfio-pci.ids=10de:1c03,10de:10f1" --append-if-missing="drm.edid_firmware=DP-2:edid/3840x2160.bin" --append-if-missing="video=DP-2:e"
 #vm-gpu-initramfs:
 #    sudo rpm-ostree initramfs --enable --arg="add-drivers" --arg="vfio-pci"
 # /dev/i2c-6 is secondary monitor (HDMI = host, DP = guest)

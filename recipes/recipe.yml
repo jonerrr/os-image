@@ -2,7 +2,7 @@
 name: os-image
 description: This is my personal OS image.
 
-base-image: ghcr.io/ublue-os/silverblue-nvidia
+base-image: ghcr.io/blue-build/base-images/fedora-silverblue
 image-version: 43
 
 modules:
@@ -13,88 +13,75 @@ modules:
       - source: usr
         destination: /usr
 
-  # - type: containerfile
-  #   snippets:
-  #     - RUN chmod +x /etc/libvirt/hooks/daemon
-
-  - type: gschema-overrides
-    include:
-      - zz1-defaults.gschema.override
-
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      # - https://pkg.cloudflare.com/cloudflared.repo
-      - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
+      copr:
+        - lizardbyte/beta # sunshine
+        - rockowitz/ddcutil
+        # TODO: setup mise on system level instead of in distrobox
+        # - jdxcode/mise
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      # - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/rockowitz/ddcutil/repo/fedora-%OS_VERSION%/ddcutil-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/lizardbyte/beta/repo/fedora-%OS_VERSION%/lizardbyte-beta-fedora-%OS_VERSION%.repo # sunshine
-      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://gist.githubusercontent.com/jonerrr/b05877f03079f7e433351a84adaf3fb5/raw/fe67bf7bfcb5b4c0c9b199e1e6f0a2534381c30d/oneAPI.repo # vtune
-      # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/cosmic-epoch-fedora-%OS_VERSION%.repo
     install:
-      - distrobox
-      - podman-compose
-      - nvidia-container-toolkit
-      - neovim
-      - adw-gtk3-theme
-      # - code
-      - restic
-      - rclone
-      - libadwaita
-      # - nautilus-open-any-terminal
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-just-perfection
-      # - gnome-shell-extension-blur-my-shell
-      # - gnome-shell-extension-system76-scheduler
-      # - system76-scheduler
-      # - scrcpy
-      - setroubleshoot
-      - flatpak-xdg-utils
-      - syncthing
-      - virt-install
-      - libvirt-daemon-config-network
-      - libvirt-daemon-kvm
-      - qemu-kvm
-      - virt-manager
-      - virt-viewer
-      - unrar
-      - p7zip
-      # - nushell
-      - libgtop2-devel
-      - lm_sensors
-      - ddcutil
-      # - ddcui
-      # for pano clipboard manager extension
-      - libgda
-      - libgda-sqlite
-      - chntpw
-      - bridge-utils
-      - waydroid
-      - lzip
-      - tailscale
-      - Sunshine
-      - usbmuxd
-      - fish
-      - zulucrypt
-      # dnf5 now requires packages to be signed, so msttcore fonts via rpm is broken for now
-      # - https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-      - gnome-shell-extension-gsconnect # Breaks if you install via extensions module
-      - webextension-gsconnect
-      - nautilus-gsconnect
+      packages:
+        # terminal
+        - fish
+        # remote access
+        - tailscale
+        - Sunshine
+        # development
+        - distrobox
+        - podman-compose
+        - nvidia-container-toolkit
+        - neovim
+        # storage / backup
+        - restic
+        - rclone
+        - syncthing
+        # utils
+        - flatpak-xdg-utils
+        - unrar
+        - p7zip
+        - lzip
+        - ddcutil
+        # - ddcui
+        # gnome
+        - gnome-shell-extension-gsconnect # Breaks if you install via extensions module
+        - webextension-gsconnect
+        - nautilus-gsconnect
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-just-perfection
+        # - gnome-shell-extension-blur-my-shell
+        # - nautilus-open-any-terminal
+        # pano dependencies
+        - libgda
+        - libgda-sqlite
+        # Vitals dependencies
+        - libgtop2-devel
+        - lm_sensors
+        # vms / debugging
+        - waydroid
+        - bridge-utils
+        - usbmuxd
+        - setroubleshoot
+
       # osbuild stuff
       # - osbuild-composer
       # - composer-cli
       # - kernel-devel
       # - livecd-tools
       # - cosmic-desktop
-    # optfix:
-    #   - intel
+    group-install:
+      packages:
+        - virtualization
     remove:
-      - firefox # default firefox removed in favor of flatpak
-      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      # - gnome-terminal-nautilus
+      packages:
+        - firefox # using flatpak instead
 
   - type: default-flatpaks
     configurations:
@@ -116,7 +103,6 @@ modules:
           - org.gnome.Showtime
           - com.valvesoftware.Steam
           - com.obsproject.Studio
-          # - dev.lizardbyte.app.Sunshine
           - com.todoist.Todoist
           - com.github.tchx84.Flatseal
           - com.spotify.Client
@@ -134,7 +120,7 @@ modules:
           - org.pulseaudio.pavucontrol
           - com.github.marinm.songrec
           - io.dbeaver.DBeaverCommunity
-          - io.github.Foldex.AdwSteamGtk
+          # - io.github.Foldex.AdwSteamGtk
           - app.drey.Damask
           - it.mijorus.gearlever
           # - dev.qwery.AddWater
@@ -147,16 +133,6 @@ modules:
           - com.getpostman.Postman
           - us.zoom.Zoom
 
-  # - type: default-flatpaks
-  #   notify: true
-  #   system:
-  #     repo-url: https://valent.andyholmes.ca/valent.flatpakrepo
-  #     repo-name: valent
-  #     install:
-  #       - ca.andyholmes.Valent
-  # - type: bling
-  #   install:
-  #     - dconf-update-service
   # - type: brew
   # - type: akmods
   #   install:
@@ -177,6 +153,10 @@ modules:
       - Grand Theft Focus
     # uninstall:
     #   - GSConnect
+
+  - type: gschema-overrides
+    include:
+      - zz1-defaults.gschema.override
 
   - type: script
     scripts:
@@ -209,6 +189,18 @@ modules:
         - Open Sans
         - Fira Sans
 
+  - type: kargs
+    kargs:
+      # dgpu passthrough
+      - --append-if-missing=intel_iommu=on
+      - --append-if-missing=iommu=pt
+      - --append-if-missing=rd.driver.pre=vfio_pci
+      - --append-if-missing=vfio-pci.ids=10de:1c03,10de:10f1
+      # virtual 4k monitor
+      - --append-if-missing=drm.edid_firmware=DP-2:edid/3840x2160.bin
+      - --append-if-missing=video=DP-2:e
+
   - type: initramfs
 
   - type: signing
+# TODO: use chezmoi module

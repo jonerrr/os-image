@@ -1,3 +1,4 @@
+# From https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/lib/systemd/system/bazzite-libvirtd-setup.service
 [Unit]
 Description=Workaround to relabel libvirt files and directories
 ConditionPathIsDirectory=/var/lib/libvirt/

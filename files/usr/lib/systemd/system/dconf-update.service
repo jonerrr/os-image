@@ -1,3 +1,4 @@
+# From https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/silverblue/usr/lib/systemd/system/dconf-update.service
 [Unit]
 Description=Update the dconf database onboot
 Documentation=https://github.com/coreos/rpm-ostree/issues/1944

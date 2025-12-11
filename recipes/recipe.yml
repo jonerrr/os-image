@@ -18,11 +18,11 @@ modules:
       copr:
         - lizardbyte/beta # sunshine
         - rockowitz/ddcutil
+        - ublue-os/packages
         # TODO: setup mise on system level instead of in distrobox
         # - jdxcode/mise
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      # - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
@@ -48,6 +48,7 @@ modules:
         - unrar
         - p7zip
         - lzip
+        - uupd
         - ddcutil
         # - ddcui
         # gnome
@@ -172,10 +173,8 @@ modules:
     system:
       enabled:
         - dconf-update.service
-        # - create-video-device.service
-        - update.timer
+        - uupd.timer
         - libvirt-workaround.service
-        - swtpm-workaround.service
         - libvirt-backup.timer
         - tailscaled.service
 

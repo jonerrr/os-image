@@ -7,7 +7,7 @@ After=graphical-session.target
 Type=oneshot
 # Ensure the script environment has access to the wayland/display variables
 Environment=XDG_SESSION_TYPE=wayland
-ExecStart=ujust init-monitor-conf
+ExecStart=blujust init-monitor-conf
 RemainAfterExit=yes
 
 [Install]

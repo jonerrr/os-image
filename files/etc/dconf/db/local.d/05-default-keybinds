@@ -18,17 +18,17 @@ name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Control><Alt><Super>v'
-command='ujust vm-display'
+command='blblujust vm-display'
 name='VM display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Control><Alt><Super>h'
-command='ujust host-display'
+command='blujust host-display'
 name='Host display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding='<Control><Alt><Super>c'
-command='ujust init-monitor-conf'
+command='blujust init-monitor-conf'
 name='Normal monitor config'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]

@@ -18,23 +18,23 @@ name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Control><Alt><Super>v'
-command='blujust vm-display'
-name='VM display'
+command='mise display:vm'
+name='Switch to VM display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Control><Alt><Super>h'
-command='blujust host-display'
-name='Host display'
+command='mise display:host'
+name='Switch to host display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding='<Control><Alt><Super>c'
-command='blujust init-monitor-conf'
+command='mise monitor:init'
 name='Normal monitor config'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
 binding='<Control><Alt><Super>b'
-command='gdctl set --logical-monitor --monitor DP-1 --mode 1920x1080@119.982 --x 0 --y 0 --logical-monitor --monitor HDMI-1 --mode 1920x1080@119.982 --x 1920 --y 0 --logical-monitor --primary --monitor DP-2 --mode 3840x2160@60.000 --x 3840 --y 0'
-name='Second Display Primary'
+command='mise monitor:virtual-primary'
+name='Virtual Display Primary'
 
 [org/gnome/desktop/wm/keybindings]
 switch-group=['<Super>Escape']

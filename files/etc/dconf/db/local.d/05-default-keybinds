@@ -18,7 +18,7 @@ name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Control><Alt><Super>v'
-command='blblujust vm-display'
+command='blujust vm-display'
 name='VM display'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]

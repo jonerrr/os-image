@@ -20,7 +20,7 @@ modules:
         - rockowitz/ddcutil
         - ublue-os/packages
         # TODO: setup mise on system level instead of in distrobox
-        # - jdxcode/mise
+        - jdxcode/mise
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
@@ -36,6 +36,7 @@ modules:
         - Sunshine
         # development
         - distrobox
+        - mise
         - podman-compose
         - nvidia-container-toolkit
         - neovim
@@ -99,7 +100,6 @@ modules:
           - page.kramo.Cartridges
           - com.usebottles.bottles
           - org.gnome.Geary
-          - io.github.yuki_iptv.yuki-iptv
           - io.podman_desktop.PodmanDesktop
           - org.gnome.Showtime
           - com.valvesoftware.Steam
@@ -133,6 +133,7 @@ modules:
           - md.obsidian.Obsidian
           - com.getpostman.Postman
           - us.zoom.Zoom
+          - dev.fredol.open-tv
 
   # - type: brew
   # - type: akmods
@@ -159,9 +160,8 @@ modules:
     include:
       - zz1-defaults.gschema.override
 
-  - type: script
-    scripts:
-      - resticprofile.sh
+  - type: chezmoi
+    repository: https://github.com/jonerrr/dotfiles
 
   - type: systemd
     user:
@@ -201,4 +201,3 @@ modules:
   - type: initramfs
 
   - type: signing
-# TODO: use chezmoi module

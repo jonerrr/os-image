@@ -33,7 +33,7 @@ name='Normal monitor config'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
 binding='<Control><Alt><Super>b'
-command='gdctl set --logical-monitor --monitor DP-1 --mode 1920x1080@119.982 --x 0 --y 0 --logical-monitor --monitor HDMI-1 --mode 1920x1080@60.000 --x 1920 --y 0 --logical-monitor --primary --monitor DP-2 --mode 3840x2160@60.000 --x 3840 --y 0'
+command='gdctl set --logical-monitor --monitor DP-1 --mode 1920x1080@119.982 --x 0 --y 0 --logical-monitor --monitor HDMI-1 --mode 1920x1080@119.982 --x 1920 --y 0 --logical-monitor --primary --monitor DP-2 --mode 3840x2160@60.000 --x 3840 --y 0'
 name='Second Display Primary'
 
 [org/gnome/desktop/wm/keybindings]

@@ -23,7 +23,6 @@ modules:
         - jdxcode/mise
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      # - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
       # - https://gist.githubusercontent.com/jonerrr/b05877f03079f7e433351a84adaf3fb5/raw/fe67bf7bfcb5b4c0c9b199e1e6f0a2534381c30d/oneAPI.repo # vtune

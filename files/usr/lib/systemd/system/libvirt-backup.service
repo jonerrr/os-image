@@ -6,9 +6,9 @@ Wants=libvirtd.service
 [Service]
 Type=oneshot
 User=root
-ExecStartPre=/bin/mkdir -p /home/jonah/qemu
-ExecStartPre=/usr/sbin/semanage fcontext -a -t rsync_data_t "/home/jonah/qemu(/.*)?" || true
-ExecStartPre=/sbin/restorecon -Rv /home/jonah/qemu
-ExecStart=/usr/bin/rsync -a --delete /etc/libvirt/qemu/ /home/jonah/qemu/
-ExecStartPost=/bin/chown -R jonah:jonah /home/jonah/qemu
-ExecStartPost=/sbin/restorecon -Rv /home/jonah/qemu
+ExecStartPre=/bin/mkdir -p /var/home/jonah/qemu
+ExecStartPre=/usr/sbin/semanage fcontext -a -t rsync_data_t "/var/home/jonah/qemu(/.*)?"
+ExecStartPre=/sbin/restorecon -Rv /var/home/jonah/qemu
+ExecStart=/usr/bin/rsync -a --delete /etc/libvirt/qemu/ /var/home/jonah/qemu/
+ExecStartPost=/bin/chown -R jonah:jonah /var/home/jonah/qemu
+ExecStartPost=/sbin/restorecon -Rv /var/home/jonah/qemu

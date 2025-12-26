@@ -175,6 +175,8 @@ modules:
         - libvirt-workaround.service
         - libvirt-backup.timer
         - tailscaled.service
+        - configure-flatpaks.service
+        - firefox-prefs.service
 
   - type: fonts
     fonts:

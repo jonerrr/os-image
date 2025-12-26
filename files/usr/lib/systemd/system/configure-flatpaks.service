@@ -1,0 +1,13 @@
+[Unit]
+Description=Configure system flatpaks
+After=system-flatpak-setup.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/configure-flatpaks
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

@@ -4,4 +4,4 @@ After=gnome-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/hide-waydroid-apps
+ExecStart=/usr/libexec/hide-waydroid-apps

@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure firefox preferences
+After=system-flatpak-setup.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/firefox-prefs
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

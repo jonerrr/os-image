@@ -177,6 +177,7 @@ modules:
         - tailscaled.service
         - configure-flatpaks.service
         - firefox-prefs.service
+        - regen-nvctk-cdi.service
 
   - type: fonts
     fonts:

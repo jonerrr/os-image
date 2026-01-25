@@ -33,6 +33,7 @@ modules:
         # remote access
         - tailscale
         - Sunshine
+        - https://github.com/joshuar/go-hass-agent/releases/download/v14.3.1/go-hass-agent-14.3.1-1.x86_64.rpm
         # development
         - distrobox
         - mise

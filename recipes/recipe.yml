@@ -19,7 +19,6 @@ modules:
         - lizardbyte/beta # sunshine
         - rockowitz/ddcutil
         - ublue-os/packages
-        # TODO: setup mise on system level instead of in distrobox
         - jdxcode/mise
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -71,6 +70,8 @@ modules:
         - bridge-utils
         - usbmuxd
         - setroubleshoot
+        # boot stuff
+        - systemd-boot-unsigned
 
       # osbuild stuff
       # - osbuild-composer
@@ -84,6 +85,13 @@ modules:
     remove:
       packages:
         - firefox # using flatpak instead
+        # need to remove these so systemd-boot is used
+        - bootupd # Must be removed to trigger bootc's systemd-boot logic
+        # - grub2                  # TODO: cleanup grub packages
+        # - grub2-common
+        # - grub2-efi-x64
+        # - grub2-tools
+        # - shim-x64 # for secure boot systems
 
   - type: default-flatpaks
     configurations:

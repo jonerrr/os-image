@@ -1,0 +1,5 @@
+[install]
+block = ["tpm2-luks"]
+
+[install.filesystem.root]
+type = "btrfs"

@@ -12,6 +12,10 @@ openssl req -config ./openssl.cnf \
     -out ./files/etc/pki/akmods/certs/akmods-jonah.der
 '''
 
+[tasks."convert-key-format"]
+description = "Convert MOK.priv to base64 for github action secret"
+run = "base64 -w 0 MOK.priv"
+
 [tasks."pull-latest-image"]
 raw = true  # for sudo
 run = "sudo podman pull ghcr.io/jonerrr/os-image:latest"

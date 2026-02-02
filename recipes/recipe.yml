@@ -71,7 +71,7 @@ modules:
         - usbmuxd
         - setroubleshoot
         # boot stuff
-        - systemd-boot-unsigned
+        # - systemd-boot-unsigned
 
       # osbuild stuff
       # - osbuild-composer
@@ -86,7 +86,7 @@ modules:
       packages:
         - firefox # using flatpak instead
         # need to remove these so systemd-boot is used
-        - bootupd # Must be removed to trigger bootc's systemd-boot logic
+        # - bootupd # Must be removed to trigger bootc's systemd-boot logic
         # - grub2                  # TODO: cleanup grub packages
         # - grub2-common
         # - grub2-efi-x64
@@ -208,6 +208,19 @@ modules:
       # virtual 4k monitor
       - --append-if-missing=drm.edid_firmware=DP-2:edid/3840x2160.bin
       - --append-if-missing=video=DP-2:e
+      # disable selinux since its not supported with composefs backend yet
+      # See https://github.com/bootc-dev/bootc/issues/1826
+      # - --append-if-missing=enforcing=0
+
+  # - type: script
+  #   env:
+  #     PUBLIC_KEY_DER_PATH: /etc/pki/akmods/certs/akmods-jonah.der
+  #   secrets:
+  #     - type: file
+  #       source: ./MOK.priv
+  #       mount:
+  #         type: file
+  #         destination: /tmp/certs/private_key.priv
 
   - type: initramfs
 

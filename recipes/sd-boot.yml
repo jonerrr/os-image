@@ -1,0 +1,38 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: os-image-sd-boot
+description: OS image with systemd-boot. Only used for testing
+
+base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia
+image-version: 43
+
+modules:
+  - from-file: base/common.yml
+
+  - type: kargs
+    kargs:
+      # disable selinux since its not supported with composefs backend yet
+      # See https://github.com/bootc-dev/bootc/issues/1826
+      - --append-if-missing=enforcing=0
+
+  - type: dnf
+    install:
+      packages:
+        # boot stuff
+        - systemd-boot-unsigned
+    remove:
+      packages:
+        # need to remove these so systemd-boot is used
+        - bootupd # Must be removed to trigger bootc's systemd-boot logic
+
+  - type: script
+    env:
+      PUBLIC_KEY_DER_PATH: /etc/pki/akmods/certs/akmods-jonah.der
+    secrets:
+      - type: file
+        source: ./MOK.priv
+        mount:
+          type: file
+          destination: /tmp/certs/private_key.priv
+    scripts:
+      - sign-bootloader.sh

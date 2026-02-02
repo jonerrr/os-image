@@ -1,0 +1,208 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: files
+    files:
+      - source: etc
+        destination: /etc
+      - source: usr
+        destination: /usr
+
+  - type: dnf
+    repos:
+      copr:
+        - lizardbyte/beta # sunshine
+        - rockowitz/ddcutil
+        - ublue-os/packages
+        - jdxcode/mise
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      # - https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-%OS_VERSION%/scrcpy-%OS_VERSION%.repo
+      # - https://copr.fedorainfracloud.org/coprs/atim/nushell/repo/fedora-%OS_VERSION%/nushell-%OS_VERSION%.repo
+      # - https://gist.githubusercontent.com/jonerrr/b05877f03079f7e433351a84adaf3fb5/raw/fe67bf7bfcb5b4c0c9b199e1e6f0a2534381c30d/oneAPI.repo # vtune
+    install:
+      packages:
+        # terminal
+        - fish
+        # remote access
+        - tailscale
+        - Sunshine
+        - https://github.com/joshuar/go-hass-agent/releases/download/v14.3.1/go-hass-agent-14.3.1-1.x86_64.rpm
+        # development
+        - distrobox
+        - mise
+        - podman-compose
+        - nvidia-container-toolkit
+        - neovim
+        # storage / backup
+        - restic
+        - rclone
+        - syncthing
+        # utils
+        - flatpak-xdg-utils
+        - unrar
+        - p7zip
+        - lzip
+        - uupd
+        - ddcutil
+        # - ddcui
+        # gnome
+        - gnome-shell-extension-gsconnect # Breaks if you install via extensions module
+        - webextension-gsconnect
+        - nautilus-gsconnect
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-just-perfection
+        # - gnome-shell-extension-blur-my-shell
+        # - nautilus-open-any-terminal
+        # pano dependencies
+        - libgda
+        - libgda-sqlite
+        # Vitals dependencies
+        - libgtop2-devel
+        - lm_sensors
+        # vms / debugging
+        - waydroid
+        - bridge-utils
+        - usbmuxd
+        - setroubleshoot
+        # boot stuff
+        # - systemd-boot-unsigned
+
+      # osbuild stuff
+      # - osbuild-composer
+      # - composer-cli
+      # - kernel-devel
+      # - livecd-tools
+      # - cosmic-desktop
+    group-install:
+      packages:
+        - virtualization
+    remove:
+      packages:
+        - firefox # using flatpak instead
+        # need to remove these so systemd-boot is used
+        # - bootupd # Must be removed to trigger bootc's systemd-boot logic
+        # - grub2                  # TODO: cleanup grub packages
+        # - grub2-common
+        # - grub2-efi-x64
+        # - grub2-tools
+        # - shim-x64 # for secure boot systems
+
+  - type: default-flatpaks
+    configurations:
+      - notify: false
+        scope: system
+        install:
+          - org.mozilla.firefox
+          - tv.plex.PlexDesktop
+          - net.lutris.Lutris
+          - rest.insomnia.Insomnia
+          - org.prismlauncher.PrismLauncher
+          - org.qbittorrent.qBittorrent
+          - com.redis.RedisInsight
+          - page.kramo.Cartridges
+          - com.usebottles.bottles
+          - org.gnome.Geary
+          - io.podman_desktop.PodmanDesktop
+          - org.gnome.Showtime
+          - com.valvesoftware.Steam
+          - com.obsproject.Studio
+          - com.todoist.Todoist
+          - com.github.tchx84.Flatseal
+          - com.spotify.Client
+          - com.discordapp.Discord
+          # - dev.vencord.Vesktop
+          - org.gnome.Loupe
+          - org.gnome.Calculator
+          - org.libreoffice.LibreOffice
+          - org.gnome.Weather
+          - org.gnome.Calendar
+          - com.bitwarden.desktop
+          - org.gnome.clocks
+          - org.gnome.Papers
+          - org.gimp.GIMP
+          - org.pulseaudio.pavucontrol
+          - com.github.marinm.songrec
+          - io.dbeaver.DBeaverCommunity
+          # - io.github.Foldex.AdwSteamGtk
+          - app.drey.Damask
+          - it.mijorus.gearlever
+          # - dev.qwery.AddWater
+          - com.github.johnfactotum.Foliate
+          - net.sourceforge.jpdftweak.jPdfTweak
+          - io.github.ungoogled_software.ungoogled_chromium
+          - page.tesk.Refine
+          - com.mattjakeman.ExtensionManager
+          - md.obsidian.Obsidian
+          - com.getpostman.Postman
+          - us.zoom.Zoom
+          - dev.fredol.open-tv
+
+  # - type: brew
+  # - type: akmods
+  #   install:
+  #     - v4l2loopback
+  - type: gnome-extensions
+    install:
+      - Vitals
+      # - Airpod Battery Monitor
+      - Compiz windows effect
+      - Desktop Cube
+      - Fullscreen Avoider
+      - 4470 # Media Controls
+      - Weather O'Clock
+      # - AppIndicator and KStatusNotifierItem Support
+      - Just Perfection
+      - 517 # Caffeine
+      - Brightness control using ddcutil
+      - Grand Theft Focus
+    # uninstall:
+    #   - GSConnect
+
+  - type: gschema-overrides
+    include:
+      - zz1-defaults.gschema.override
+
+  - type: chezmoi
+    repository: https://github.com/jonerrr/dotfiles
+
+  - type: systemd
+    user:
+      enabled:
+        - syncthing.service
+        - monitor-setup.service
+        - hide-waydroid-apps.path
+    system:
+      enabled:
+        - dconf-update.service
+        - uupd.timer
+        - libvirt-workaround.service
+        - libvirt-backup.timer
+        - tailscaled.service
+        - configure-flatpaks.service
+        - firefox-prefs.service
+        - regen-nvctk-cdi.service
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add "Nerd Font" suffix.
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
+        - Fira Sans
+
+  - type: kargs
+    kargs:
+      # dgpu passthrough
+      - --append-if-missing=intel_iommu=on
+      - --append-if-missing=iommu=pt
+      - --append-if-missing=rd.driver.pre=vfio_pci
+      - --append-if-missing=vfio-pci.ids=10de:1c03,10de:10f1
+      # virtual 4k monitor
+      - --append-if-missing=drm.edid_firmware=DP-2:edid/3840x2160.bin
+      - --append-if-missing=video=DP-2:e
+
+  - type: initramfs
+
+  - type: signing

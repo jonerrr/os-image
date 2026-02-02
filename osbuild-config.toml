@@ -1,0 +1,5 @@
+[customizations.installer.kickstart]
+contents = """
+# force graphical setup so it doesn't just install to random disk
+graphical
+"""

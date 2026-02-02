@@ -28,7 +28,18 @@ jobs:
         recipe:
           # !! Add your recipes here
           - recipe.yml
+          - sd-boot.yml
     steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
+
+      - name: Extract kernel key
+        shell: bash
+        env:
+          KERNEL_SIGNING_SECRET: ${{ secrets.KERNEL_SIGNING_SECRET }}
+        run: echo "${KERNEL_SIGNING_SECRET}" | base64 -d > MOK.priv
+
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.11
@@ -37,6 +48,7 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
-
+          skip_checkout: true
+          verify_install: true # not sure if needed
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true

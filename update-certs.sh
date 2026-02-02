@@ -11,28 +11,28 @@ MS_GUID="77fa9abd-0359-4d32-bd60-28f4e78f784b"
 # MY_GUID is provided by env var (from mise.toml)
 # echo "Using MY_GUID: $MY_GUID"
 # Name of your personal cert provided in the prompt
-MY_SIGNING_CERT="certs/akmods-jonah.der"
+MY_SIGNING_CERT="sb-certs/akmods-jonah.der"
 
 mkdir -p "$KEY_DIR"
 mkdir -p "$BOOTC_INSTALL_DIR"
 
 echo "=== 1. Downloading Certificates ==="
 # (Your existing download commands)
-mkdir -p certs
+mkdir -p sb-certs
 # Microsoft Windows Production PCA 2011 (Windows Bootloader)
-curl -L -o certs/MicWinProPCA2011_2011-10-19.crt https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt
+curl -L -o sb-certs/MicWinProPCA2011_2011-10-19.crt https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt
 # Windows UEFI CA 2023
-curl -L -o certs/windows_uefi_ca_2023.crt https://www.microsoft.com/pkiops/certs/windows%20uefi%20ca%202023.crt
+curl -L -o sb-certs/windows_uefi_ca_2023.crt https://www.microsoft.com/pkiops/certs/windows%20uefi%20ca%202023.crt
 # Microsoft UEFI CA 2011 (Third Party / Shim / Linux)
-curl -L -o certs/MicCorUEFCA2011_2011-06-27.crt https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt
+curl -L -o sb-certs/MicCorUEFCA2011_2011-06-27.crt https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt
 # Microsoft UEFI CA 2023
-curl -L -o certs/microsoft_uefi_ca_2023.crt https://www.microsoft.com/pkiops/certs/microsoft%20uefi%20ca%202023.crt
+curl -L -o sb-certs/microsoft_uefi_ca_2023.crt https://www.microsoft.com/pkiops/certs/microsoft%20uefi%20ca%202023.crt
 # Microsoft KEK 2011
-curl -L -o certs/MicCorKEKCA2011_2011-06-24.crt https://www.microsoft.com/pkiops/certs/MicCorKEKCA2011_2011-06-24.crt
+curl -L -o sb-certs/MicCorKEKCA2011_2011-06-24.crt https://www.microsoft.com/pkiops/certs/MicCorKEKCA2011_2011-06-24.crt
 # Microsoft KEK 2023
-curl -L -o certs/microsoft_kek_2k_ca_2023.crt https://www.microsoft.com/pkiops/certs/microsoft%20corporation%20kek%202k%20ca%202023.crt
+curl -L -o sb-certs/microsoft_kek_2k_ca_2023.crt https://www.microsoft.com/pkiops/certs/microsoft%20corporation%20kek%202k%20ca%202023.crt
 # Blue Build Custom Key
-curl -L -o certs/akmods-blue-build.der https://github.com/blue-build/base-images/raw/refs/heads/main/files/base/etc/pki/akmods/certs/akmods-blue-build.der
+curl -L -o sb-certs/akmods-blue-build.der https://github.com/blue-build/base-images/raw/refs/heads/main/files/base/etc/pki/akmods/certs/akmods-blue-build.der
 
 echo "=== 2. Generating Your Hardware Owner Keys (PK, KEK, local db) ==="
 # We generate new keys to act as the "Platform Key" owner.
@@ -57,14 +57,14 @@ echo "=== 3. Converting Certificates to EFI Signature Lists (ESL) ==="
 # We must include: Microsoft Keys, Blue Build, YOUR signing key (akmods-jonah), and your local db key.
 
 # Convert Microsoft db keys (Using MS GUID)
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_Win_db_2011.esl" "certs/MicWinProPCA2011_2011-10-19.crt"
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_Win_db_2023.esl" "certs/windows_uefi_ca_2023.crt"
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_UEFI_db_2011.esl" "certs/MicCorUEFCA2011_2011-06-27.crt"
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_UEFI_db_2023.esl" "certs/microsoft_uefi_ca_2023.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_Win_db_2011.esl" "sb-certs/MicWinProPCA2011_2011-10-19.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_Win_db_2023.esl" "sb-certs/windows_uefi_ca_2023.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_UEFI_db_2011.esl" "sb-certs/MicCorUEFCA2011_2011-06-27.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_UEFI_db_2023.esl" "sb-certs/microsoft_uefi_ca_2023.crt"
 
 # Convert Custom Keys (Using YOUR GUID)
 # Blue Build
-sbsiglist --owner "$MY_GUID" --type x509 --output "$KEY_DIR/blue-build.esl" "certs/akmods-blue-build.der"
+sbsiglist --owner "$MY_GUID" --type x509 --output "$KEY_DIR/blue-build.esl" "sb-certs/akmods-blue-build.der"
 # Your personal signing key (akmods-jonah.der) - CRITICAL for booting your signed systemd-boot
 sbsiglist --owner "$MY_GUID" --type x509 --output "$KEY_DIR/jonah-signing.esl" "$MY_SIGNING_CERT"
 # Your generated local db key
@@ -84,8 +84,8 @@ cat "$KEY_DIR/MS_Win_db_2011.esl" \
 # We include Microsoft's KEK (so Windows updates can update db) and your KEK.
 
 # Convert Microsoft KEKs
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_KEK_2011.esl" "certs/MicCorKEKCA2011_2011-06-24.crt"
-sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_KEK_2023.esl" "certs/microsoft_kek_2k_ca_2023.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_KEK_2011.esl" "sb-certs/MicCorKEKCA2011_2011-06-24.crt"
+sbsiglist --owner "$MS_GUID" --type x509 --output "$KEY_DIR/MS_KEK_2023.esl" "sb-certs/microsoft_kek_2k_ca_2023.crt"
 
 # Convert your local KEK
 sbsiglist --owner "$MY_GUID" --type x509 --output "$KEY_DIR/local-KEK.esl" "$KEY_DIR/KEK.crt"

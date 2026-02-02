@@ -4,5 +4,5 @@ Containerfile
 /.bluebuild-scripts_*
 MOK.priv
 output/
-certs/
+sb-certs/
 keys/

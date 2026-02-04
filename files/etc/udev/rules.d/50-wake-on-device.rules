@@ -1,1 +1,4 @@
+# model O
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="0036", ATTR{power/wakeup}="disabled"
+# mx master logi bolt
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled"

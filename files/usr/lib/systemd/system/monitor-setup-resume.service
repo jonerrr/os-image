@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart monitor setup on resume
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+# Connects to the user manager for user 'jonah' and restarts the service
+ExecStart=/usr/bin/systemctl --user --machine=jonah@.host restart monitor-setup.service
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target

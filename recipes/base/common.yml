@@ -181,6 +181,7 @@ modules:
         - configure-flatpaks.service
         - firefox-prefs.service
         - regen-nvctk-cdi.service
+        - monitor-setup-resume.service
 
   - type: fonts
     fonts:

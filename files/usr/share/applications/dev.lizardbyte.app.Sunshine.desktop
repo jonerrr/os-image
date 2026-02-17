@@ -1,0 +1,16 @@
+[Desktop Entry]
+Actions=RunInTerminal;
+Categories=RemoteAccess;Network;
+Comment=Self-hosted game stream host for Moonlight
+# modified version of sunshine .desktop file that uses sunshine-kms instead of sunshine service
+Exec=/usr/bin/env systemctl start --u sunshine-kms
+Icon=sunshine
+Keywords=gamestream;stream;moonlight;remote play;
+Name=Sunshine
+Type=Application
+Version=1.0
+
+[Desktop Action RunInTerminal]
+Exec=gio launch /usr/share/applications/dev.lizardbyte.app.Sunshine.terminal.desktop
+Icon=application-x-executable
+Name=Run in Terminal

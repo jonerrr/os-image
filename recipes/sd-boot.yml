@@ -7,7 +7,13 @@ base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia
 image-version: 43
 
 modules:
-  - from-file: base/common.yml
+  # - from-file: base/common.yml
+  - type: files
+    files:
+      - source: etc
+        destination: /etc
+      - source: usr
+        destination: /usr
 
   - type: kargs
     kargs:

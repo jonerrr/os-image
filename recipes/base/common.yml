@@ -1,12 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
-  - type: files
-    files:
-      - source: etc
-        destination: /etc
-      - source: usr
-        destination: /usr
-
   - type: dnf
     repos:
       copr:
@@ -158,6 +151,13 @@ modules:
     # uninstall:
     #   - GSConnect
 
+  - type: files
+    files:
+      - source: etc
+        destination: /etc
+      - source: usr
+        destination: /usr
+
   - type: gschema-overrides
     include:
       - zz1-defaults.gschema.override
@@ -171,6 +171,9 @@ modules:
         - syncthing.service
         - monitor-setup.service
         - hide-waydroid-apps.path
+      disabled:
+        # see https://github.com/LizardByte/Sunshine/issues/4666
+        - sunshine
     system:
       enabled:
         - dconf-update.service

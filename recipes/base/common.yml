@@ -55,7 +55,9 @@ modules:
         # vms / debugging
         - waydroid
         - bridge-utils
+        # TODO: get usbmuxd working in a distrobox
         - usbmuxd
+        - libusbmuxd-utils
         - setroubleshoot
         # boot stuff
         # - systemd-boot-unsigned

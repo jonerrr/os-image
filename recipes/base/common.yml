@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
   - type: dnf
+    source: ghcr.io/blue-build/modules@sha256:23b9c9a2032ac653bf6a73a3b9372c12004211e004eea4269a8d3da9001c2301
     repos:
       copr:
         - lizardbyte/beta # sunshine

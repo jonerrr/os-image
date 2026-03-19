@@ -18,6 +18,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/blue-build/**"],
+      "sourceUrl": "https://github.com/blue-build/modules",
       "schedule": ["before 5am on tuesday"],
       "groupName": "BlueBuild modules",
       "semanticCommitType": "chore",

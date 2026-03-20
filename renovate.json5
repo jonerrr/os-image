@@ -1,29 +1,26 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "customManagers": [
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  customManagers: [
     {
-      "customType": "regex",
-      "description": "Update BlueBuild module digests in recipe files",
-      "managerFilePatterns": [
-        "/^recipes/.*\.ya?ml$/"
+      customType: "regex",
+      description: "Update BlueBuild module digests in recipe files",
+      managerFilePatterns: ["/^recipes/.*\.ya?ml$/"],
+      matchStrings: [
+        "(?<depName>ghcr\\.io/blue-build/[a-zA-Z0-9_-]+)@(?<currentDigest>sha256:[a-fA-F0-9]{64})",
       ],
-      "matchStrings": [
-        "(?<depName>ghcr\\.io/blue-build/[a-zA-Z0-9_-]+)@(?<currentDigest>sha256:[a-fA-F0-9]{64})"
-      ],
-      "datasourceTemplate": "docker",
-      "currentValueTemplate": "latest"
-    }
+      datasourceTemplate: "docker",
+      currentValueTemplate: "latest",
+    },
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["ghcr.io/blue-build/**"],
-      "sourceUrl": "https://github.com/blue-build/modules",
-      "schedule": ["before 5am on tuesday"],
-      "groupName": "BlueBuild modules",
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps",
-      "commitMessageTopic": "BlueBuild modules"
-    }
-  ]
+      matchDatasources: ["docker"],
+      matchPackageNames: ["ghcr.io/blue-build/**"],
+      schedule: ["before 5am on tuesday"],
+      groupName: "BlueBuild modules",
+      semanticCommitType: "chore",
+      semanticCommitScope: "deps",
+      commitMessageTopic: "BlueBuild modules",
+    },
+  ],
 }

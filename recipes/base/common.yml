@@ -84,6 +84,7 @@ modules:
         # - shim-x64 # for secure boot systems
 
   - type: default-flatpaks
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     configurations:
       - notify: false
         scope: system
@@ -138,6 +139,7 @@ modules:
   #   install:
   #     - v4l2loopback
   - type: gnome-extensions
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     install:
       - Vitals
       # - Airpod Battery Monitor
@@ -155,6 +157,7 @@ modules:
     #   - GSConnect
 
   - type: files
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     files:
       - source: etc
         destination: /etc
@@ -162,13 +165,16 @@ modules:
         destination: /usr
 
   - type: gschema-overrides
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     include:
       - zz1-defaults.gschema.override
 
   - type: chezmoi
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     repository: https://github.com/jonerrr/dotfiles
 
   - type: systemd
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     user:
       enabled:
         - syncthing.service
@@ -190,6 +196,7 @@ modules:
         - monitor-setup-resume.service
 
   - type: fonts
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     fonts:
       nerd-fonts:
         - FiraCode # don't add "Nerd Font" suffix.
@@ -200,6 +207,7 @@ modules:
         - Fira Sans
 
   - type: kargs
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
     kargs:
       # dgpu passthrough
       - --append-if-missing=intel_iommu=on
@@ -211,5 +219,7 @@ modules:
       - --append-if-missing=video=DP-2:e
 
   - type: initramfs
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334
 
   - type: signing
+    source: ghcr.io/blue-build/modules@sha256:079ae754f5b57e8f2ca5850b33a633b3fe1c37f4be51e7b00e9250a997f4e334

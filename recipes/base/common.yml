@@ -133,6 +133,7 @@ modules:
           - com.getpostman.Postman
           - us.zoom.Zoom
           - dev.fredol.open-tv
+          - io.missioncenter.MissionCenter
 
   # - type: brew
   # - type: akmods

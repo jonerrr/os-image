@@ -42,8 +42,6 @@ switch-group=['<Super>Escape']
 [org/gnome/nautilus/icon-view]
 captions=['size', 'date_modified', 'none']
 
-[org/gnome/shell/extensions/pano]
-global-shortcut=['<Super>V']
+[org/gnome/shell/extensions/copyous]
+open-clipboard-dialog-shortcut=['<Super>V']
 history-length=400
-play-audio-on-copy=false
-send-notification-on-copy=false

@@ -147,7 +147,7 @@ modules:
       - Compiz windows effect
       - Desktop Cube
       - Fullscreen Avoider
-      - 4470 # Media Controls
+      # - 4470 # Media Controls TODO: find new version of this now that this ones archived
       - Weather O'Clock
       # - AppIndicator and KStatusNotifierItem Support
       - Just Perfection
@@ -182,9 +182,7 @@ modules:
         - syncthing.service
         - monitor-setup.service
         - hide-waydroid-apps.path
-      disabled:
-        # see https://github.com/LizardByte/Sunshine/issues/4666
-        - sunshine
+        - app-dev.lizardbyte.app.Sunshine.service
     system:
       enabled:
         - dconf-update.service

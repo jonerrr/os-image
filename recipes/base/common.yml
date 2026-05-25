@@ -134,6 +134,7 @@ modules:
           - us.zoom.Zoom
           - dev.fredol.open-tv
           - io.missioncenter.MissionCenter
+          - be.alexandervanhee.gradia
 
   # - type: brew
   # - type: akmods

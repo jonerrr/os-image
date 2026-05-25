@@ -1,6 +1,6 @@
 [Unit]
 Description=Configure system flatpaks
-After=system-flatpak-setup.service
+After=flatpak-preinstall.service
 
 [Service]
 Type=oneshot

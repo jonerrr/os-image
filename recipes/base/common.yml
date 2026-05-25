@@ -83,58 +83,7 @@ modules:
         # - grub2-tools
         # - shim-x64 # for secure boot systems
 
-  - type: default-flatpaks
-    source: ghcr.io/blue-build/modules@sha256:d0e85328fcfa4182c33d3920854001d0b7efbbd341ed6f45bc1ec26c0751889d
-    configurations:
-      - notify: false
-        scope: system
-        install:
-          - org.mozilla.firefox
-          - tv.plex.PlexDesktop
-          - net.lutris.Lutris
-          - rest.insomnia.Insomnia
-          - org.prismlauncher.PrismLauncher
-          - org.qbittorrent.qBittorrent
-          - com.redis.RedisInsight
-          - page.kramo.Cartridges
-          - com.usebottles.bottles
-          - org.gnome.Geary
-          - io.podman_desktop.PodmanDesktop
-          - org.gnome.Showtime
-          - com.valvesoftware.Steam
-          - com.obsproject.Studio
-          - com.todoist.Todoist
-          - com.github.tchx84.Flatseal
-          - com.spotify.Client
-          - com.discordapp.Discord
-          # - dev.vencord.Vesktop
-          - org.gnome.Loupe
-          - org.gnome.Calculator
-          - org.libreoffice.LibreOffice
-          - org.gnome.Weather
-          - org.gnome.Calendar
-          - com.bitwarden.desktop
-          - org.gnome.clocks
-          - org.gnome.Papers
-          - org.gimp.GIMP
-          - org.pulseaudio.pavucontrol
-          - com.github.marinm.songrec
-          - io.dbeaver.DBeaverCommunity
-          # - io.github.Foldex.AdwSteamGtk
-          - app.drey.Damask
-          - it.mijorus.gearlever
-          # - dev.qwery.AddWater
-          - com.github.johnfactotum.Foliate
-          - net.sourceforge.jpdftweak.jPdfTweak
-          - io.github.ungoogled_software.ungoogled_chromium
-          - page.tesk.Refine
-          - com.mattjakeman.ExtensionManager
-          - md.obsidian.Obsidian
-          - com.getpostman.Postman
-          - us.zoom.Zoom
-          - dev.fredol.open-tv
-          - io.missioncenter.MissionCenter
-          - be.alexandervanhee.gradia
+
 
   # - type: brew
   # - type: akmods
@@ -191,6 +140,7 @@ modules:
         - libvirt-workaround.service
         - libvirt-backup.timer
         - tailscaled.service
+        - flatpak-preinstall.service
         - configure-flatpaks.service
         - firefox-prefs.service
         - regen-nvctk-cdi.service

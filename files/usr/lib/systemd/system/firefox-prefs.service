@@ -1,6 +1,6 @@
 [Unit]
 Description=Configure firefox preferences
-After=system-flatpak-setup.service
+After=flatpak-preinstall.service
 
 [Service]
 Type=oneshot

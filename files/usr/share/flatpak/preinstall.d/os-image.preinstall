@@ -1,0 +1,171 @@
+[Flatpak Preinstall org.mozilla.firefox]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall tv.plex.PlexDesktop]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall net.lutris.Lutris]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall rest.insomnia.Insomnia]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.prismlauncher.PrismLauncher]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.qbittorrent.qBittorrent]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.redis.RedisInsight]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall page.kramo.Cartridges]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.usebottles.bottles]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Geary]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.podman_desktop.PodmanDesktop]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Showtime]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.valvesoftware.Steam]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.obsproject.Studio]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.todoist.Todoist]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.tchx84.Flatseal]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.spotify.Client]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.discordapp.Discord]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Loupe]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Calculator]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.libreoffice.LibreOffice]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Weather]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Calendar]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.bitwarden.desktop]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.clocks]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Papers]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gimp.GIMP]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.pulseaudio.pavucontrol]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.marinm.songrec]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.dbeaver.DBeaverCommunity]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall app.drey.Damask]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall it.mijorus.gearlever]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.johnfactotum.Foliate]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall net.sourceforge.jpdftweak.jPdfTweak]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.github.ungoogled_software.ungoogled_chromium]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall page.tesk.Refine]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.mattjakeman.ExtensionManager]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall md.obsidian.Obsidian]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.getpostman.Postman]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall us.zoom.Zoom]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall dev.fredol.open-tv]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.missioncenter.MissionCenter]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall be.alexandervanhee.gradia]
+Branch=stable
+IsRuntime=false

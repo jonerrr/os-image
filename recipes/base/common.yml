@@ -60,6 +60,7 @@ modules:
         - usbmuxd
         - libusbmuxd-utils
         - setroubleshoot
+        - mosh
         # boot stuff
         # - systemd-boot-unsigned
 
@@ -82,8 +83,6 @@ modules:
         # - grub2-efi-x64
         # - grub2-tools
         # - shim-x64 # for secure boot systems
-
-
 
   # - type: brew
   # - type: akmods

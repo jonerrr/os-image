@@ -1,13 +1,11 @@
 [Unit]
 Description=Enable Wake on WLAN before sleep
 Documentation=man:iw(8)
-Before=sleep.target
-StopWhenUnneeded=yes
+Before=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
 ExecStart=/usr/sbin/iw phy0 wowlan enable magic-packet
 
 [Install]
-WantedBy=sleep.target
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target

@@ -138,6 +138,7 @@ modules:
         - uupd.timer
         - libvirt-workaround.service
         - libvirt-backup.timer
+        - libvirt-net-resume.service
         - tailscaled.service
         - flatpak-preinstall.service
         - configure-flatpaks.service

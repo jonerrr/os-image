@@ -1,0 +1,16 @@
+[Unit]
+Description=Restart libvirt default network on resume
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+# Wait for NetworkManager to report an active connection
+ExecStartPre=-/usr/bin/nm-online -q --timeout=15
+# Once connected (or timed out), rebuild the libvirt network
+ExecStart=-/usr/bin/virsh net-destroy default
+ExecStart=-/usr/bin/virsh net-start default
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target

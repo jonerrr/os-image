@@ -1,0 +1,13 @@
+[Unit]
+Description=Enable Wake on WLAN for %i
+Documentation=man:iw(8)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/test -d /sys/class/ieee80211/%i
+ExecStart=/usr/sbin/iw %i wowlan enable magic-packet
+
+[Install]
+WantedBy=multi-user.target

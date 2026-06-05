@@ -2,7 +2,7 @@
 name: os-image
 description: This is my personal OS image.
 
-base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia
+base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia-open
 image-version: 44
 
 modules:

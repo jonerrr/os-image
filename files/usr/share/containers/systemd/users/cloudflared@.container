@@ -1,8 +1,0 @@
-[Container]
-Image=docker.io/cloudflare/cloudflared:latest
-ContainerName=cloudflared-%i
-Exec=tunnel run
-Network=host
-AutoUpdate=registry
-Pull=always
-EnvironmentFile=%h/.config/cloudflared/%i.env

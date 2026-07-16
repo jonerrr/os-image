@@ -30,7 +30,7 @@ jobs:
           - recipe.yml
           # - sd-boot.yml
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
@@ -42,7 +42,7 @@ jobs:
 
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
-        uses: blue-build/github-action@24d146df25adc2cf579e918efe2d9bff6adea408 # v1.11
+        uses: blue-build/github-action@836161eb076426a451e6a0054f722b1153b8b3ad # v1.12
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}

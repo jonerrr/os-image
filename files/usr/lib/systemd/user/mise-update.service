@@ -1,0 +1,9 @@
+[Unit]
+Description=Update mise installs and global lock
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=mise i
+ExecStart=mise lock -g

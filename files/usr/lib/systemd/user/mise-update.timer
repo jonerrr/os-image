@@ -1,0 +1,11 @@
+[Unit]
+Description=Run mise updates twice a week
+Requires=mise-update.service
+
+[Timer]
+Unit=mise-update.service
+OnCalendar=Mon,Thu 03:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

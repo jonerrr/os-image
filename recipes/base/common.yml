@@ -167,7 +167,7 @@ modules:
       - --append-if-missing=rd.driver.pre=vfio_pci
       - --append-if-missing=vfio-pci.ids=10de:1c03,10de:10f1
       # virtual 4k monitor
-      - --append-if-missing=drm.edid_firmware=DP-2:edid/3840x2160.bin
+      - --append-if-missing=drm.edid_firmware=DP-2:edid/fire_tv.bin
       - --append-if-missing=video=DP-2:e
 
   - type: initramfs

@@ -162,13 +162,13 @@ modules:
     source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
     kargs:
       # dgpu passthrough
-      - --append-if-missing=intel_iommu=on
-      - --append-if-missing=iommu=pt
-      - --append-if-missing=rd.driver.pre=vfio_pci
-      - --append-if-missing=vfio-pci.ids=10de:1c03,10de:10f1
+      - intel_iommu=on
+      - iommu=pt
+      - rd.driver.pre=vfio_pci
+      - vfio-pci.ids=10de:1c03,10de:10f1
       # virtual 4k monitor
-      - --append-if-missing=drm.edid_firmware=DP-2:edid/fire_tv.bin
-      - --append-if-missing=video=DP-2:e
+      - drm.edid_firmware=DP-2:edid/fire_tv.bin
+      - video=DP-2:e
 
   - type: initramfs
     source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29

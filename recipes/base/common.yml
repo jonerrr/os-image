@@ -146,6 +146,7 @@ modules:
         - regen-nvctk-cdi.service
         - monitor-setup-resume.service
         - wowlan-enable@phy0.service
+        - ssh-monitor.service
 
   - type: fonts
     source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29

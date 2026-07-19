@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true; do
+  if ss -tnH state established '( dport = :22 )' | grep -q .; then
+    # Active connection found: Block suspend for 60 seconds
+    systemd-inhibit --what=sleep:idle --mode=block --who="ssh-monitor" --why="Active SSH Session" sleep 60
+  else
+    # No connection: Wait 60 seconds and check again
+    sleep 60
+  fi
+done

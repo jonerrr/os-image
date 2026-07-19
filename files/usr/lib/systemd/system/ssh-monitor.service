@@ -1,0 +1,12 @@
+[Unit]
+Description=Inhibit suspend when SSH connection is active
+After=network.target sshd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/ssh-inhibit
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

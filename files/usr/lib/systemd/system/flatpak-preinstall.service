@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 ExecStartPre=/usr/bin/flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-ExecStart=/usr/bin/flatpak preinstall -y --system
+ExecStart=/usr/bin/flatpak preinstall -y --system --noninteractive
 StandardOutput=journal
 StandardError=journal
 RemainAfterExit=yes

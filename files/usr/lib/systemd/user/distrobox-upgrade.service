@@ -1,0 +1,8 @@
+[Unit]
+Description=Upgrade distrobox container packages
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=distrobox-upgrade --all

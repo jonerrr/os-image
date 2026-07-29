@@ -6,7 +6,7 @@ modules:
       copr:
         - lizardbyte/beta # sunshine
         - rockowitz/ddcutil
-        - ublue-os/packages
+        # - ublue-os/packages
         - jdxcode/mise
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -36,7 +36,6 @@ modules:
         - unrar
         - p7zip
         - lzip
-        - uupd
         - ddcutil
         # - ddcui
         # gnome
@@ -132,10 +131,11 @@ modules:
         - monitor-setup.service
         - hide-waydroid-apps.path
         - app-dev.lizardbyte.app.Sunshine.service
+        - mise-update.timer
+        - distrobox-upgrade.timer
     system:
       enabled:
         - dconf-update.service
-        - uupd.timer
         - libvirt-workaround.service
         - libvirt-backup.timer
         - libvirt-net-resume.service

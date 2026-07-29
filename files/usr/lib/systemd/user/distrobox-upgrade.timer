@@ -1,0 +1,11 @@
+[Unit]
+Description=Run distrobox upgrades daily
+Requires=distrobox-upgrade.service
+
+[Timer]
+Unit=distrobox-upgrade.service
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

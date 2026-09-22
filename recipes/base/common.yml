@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
   - type: dnf
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     repos:
       copr:
         - lizardbyte/beta # sunshine
@@ -88,7 +88,7 @@ modules:
   #   install:
   #     - v4l2loopback
   - type: gnome-extensions
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     install:
       - Vitals
       # - Airpod Battery Monitor
@@ -107,7 +107,7 @@ modules:
     #   - GSConnect
 
   - type: files
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     files:
       - source: etc
         destination: /etc
@@ -115,16 +115,16 @@ modules:
         destination: /usr
 
   - type: gschema-overrides
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     include:
       - zz1-defaults.gschema.override
 
   - type: chezmoi
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     repository: https://github.com/jonerrr/dotfiles
 
   - type: systemd
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     user:
       enabled:
         - syncthing.service
@@ -149,7 +149,7 @@ modules:
         - ssh-monitor.service
 
   - type: fonts
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     fonts:
       nerd-fonts:
         - FiraCode # don't add "Nerd Font" suffix.
@@ -160,7 +160,7 @@ modules:
         - Fira Sans
 
   - type: kargs
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     kargs:
       # dgpu passthrough
       - intel_iommu=on
@@ -172,7 +172,7 @@ modules:
       - video=DP-2:e
 
   - type: initramfs
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
 
   - type: signing
-    source: ghcr.io/blue-build/modules@sha256:a21771c64475511f5d7f8ab98bfb74217658c9958c2b1cb956d9c0bcbbdeed29
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a

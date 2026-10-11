@@ -4,7 +4,7 @@ Requires=mise-update.service
 
 [Timer]
 Unit=mise-update.service
-OnCalendar=Mon,Thu 03:00:00
+OnCalendar=daily
 Persistent=true
 
 [Install]

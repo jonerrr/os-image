@@ -6,4 +6,3 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=mise upgrade
-ExecStart=mise lock -g

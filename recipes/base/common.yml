@@ -135,6 +135,7 @@ modules:
         - distrobox-upgrade.timer
     system:
       enabled:
+        - var-swap-swapfile.swap
         - dconf-update.service
         - libvirt-workaround.service
         - libvirt-backup.timer
@@ -162,6 +163,10 @@ modules:
   - type: kargs
     source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
     kargs:
+      # Compressed RAM cache in front of the persistent SSD swapfile.
+      - zswap.enabled=1
+      - zswap.max_pool_percent=20
+      - zswap.shrinker_enabled=1
       # dgpu passthrough
       - intel_iommu=on
       - iommu=pt

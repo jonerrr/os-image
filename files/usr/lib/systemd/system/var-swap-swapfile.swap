@@ -1,0 +1,11 @@
+[Unit]
+Description=Persistent swap backing for zswap
+Requires=swapfile-setup.service
+After=swapfile-setup.service
+
+[Swap]
+What=/var/swap/swapfile
+TimeoutSec=30
+
+[Install]
+WantedBy=swap.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=Prepare persistent Btrfs swapfile
+Documentation=https://btrfs.readthedocs.io/en/latest/Swapfile.html
+# Run before the early-boot swap target without depending on sysinit.target.
+DefaultDependencies=no
+RequiresMountsFor=/var
+After=systemd-remount-fs.service systemd-modules-load.service
+Before=var-swap-swapfile.swap shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/swapfile-setup
+# /tmp may be a tmpfs ordered after swap.target; use persistent /var for tools.
+Environment=TMPDIR=/var/tmp
+RemainAfterExit=yes
+UMask=0077
+TimeoutStartSec=120

@@ -1,0 +1,50 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+swap_dir=/var/swap
+swap_file=$swap_dir/swapfile
+size_bytes=$((16 * 1024 * 1024 * 1024))
+# Leave some filesystem headroom after allocating the file.
+reserve_bytes=$((16 * 1024 * 1024 * 1024))
+
+fail() {
+    echo "swapfile-setup: $*" >&2
+    exit 1
+}
+
+[[ $(stat -f -c %T /var) == btrfs ]] || fail '/var must be on Btrfs'
+[[ ! -L $swap_dir ]] || fail "$swap_dir must not be a symlink"
+if [[ ! -e $swap_dir ]]; then
+    btrfs subvolume create "$swap_dir"
+fi
+[[ -d $swap_dir && $(stat -c %u "$swap_dir") == 0 ]] || fail "$swap_dir must be a root-owned directory"
+btrfs subvolume show "$swap_dir" >/dev/null
+chmod 0700 "$swap_dir"
+
+[[ ! -L $swap_file ]] || fail "$swap_file must not be a symlink"
+if [[ -e $swap_file ]]; then
+    # Never truncate, reformat or resize an existing file, including active swap.
+    [[ -f $swap_file && $(stat -c %u "$swap_file") == 0 ]] || fail "$swap_file must be a root-owned regular file"
+    [[ $(stat -c %s "$swap_file") == "$size_bytes" ]] || fail "$swap_file exists with an unexpected size; inspect it manually"
+    [[ $(blkid -p -s TYPE -o value "$swap_file") == swap ]] || fail "$swap_file has no valid swap signature"
+else
+    available_bytes=$(df -B1 --output=avail "$swap_dir" | tail -n 1)
+    (( available_bytes >= size_bytes + reserve_bytes )) || fail 'need at least 32 GiB free to create 16 GiB swap and retain 16 GiB headroom'
+    # Publish only a fully initialized file. A failed creation is cleaned up.
+    work_dir=$(mktemp -d "$swap_dir/.create.XXXXXX")
+    trap 'rm -rf -- "$work_dir"' EXIT
+    btrfs filesystem mkswapfile --size "$size_bytes" "$work_dir/swapfile"
+    mv -T "$work_dir/swapfile" "$swap_file"
+fi
+chmod 0600 "$swap_file"
+# Check Btrfs swapfile requirements before systemd tries swapon.
+btrfs inspect-internal map-swapfile "$swap_file" >/dev/null
+
+if selinuxenabled; then
+    # Persist the label rule across restorecon and full SELinux relabels.
+    if [[ $(matchpathcon -n "$swap_file") != *:swapfile_t:* ]]; then
+        semanage fcontext -a -t swapfile_t '/var/swap/swapfile'
+    fi
+    restorecon "$swap_dir" "$swap_file"
+fi
+echo "swapfile-setup: ready: $swap_file (16 GiB)"

@@ -11,6 +11,16 @@
       datasourceTemplate: "docker",
       currentValueTemplate: "latest",
     },
+    {
+      customType: "regex",
+      description: "Update BlueBuild CLI version in GitHub Actions workflows",
+      managerFilePatterns: ["/^\\.github\\/workflows\\/.*\\.ya?ml$/"],
+      matchStrings: [
+        "cli_version:\\s*['\"]?(?<currentValue>[^'\"\\s]+)['\"]?",
+      ],
+      depNameTemplate: "blue-build/cli",
+      datasourceTemplate: "github-releases",
+    },
   ],
   packageRules: [
     {
@@ -21,6 +31,13 @@
       semanticCommitType: "chore",
       semanticCommitScope: "deps",
       commitMessageTopic: "BlueBuild modules",
+    },
+    {
+      matchDatasources: ["github-releases"],
+      matchPackageNames: ["blue-build/cli"],
+      semanticCommitType: "chore",
+      semanticCommitScope: "deps",
+      commitMessageTopic: "BlueBuild CLI",
     },
   ],
 }

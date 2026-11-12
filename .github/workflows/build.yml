@@ -52,4 +52,4 @@ jobs:
           verify_install: true # not sure if needed
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
-          cli_version: v0.9.41
+          cli_version: v0.9.42

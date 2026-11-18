@@ -9,9 +9,3 @@ flatpak override \
     --env=LIBVA_MESSAGING_LEVEL=1 \
     --env=MOZ_DISABLE_RDD_SANDBOX=1 \
     org.mozilla.firefox
-
-# enable wayland support for electron apps in flatpak
-flatpak override --system --env=ELECTRON_OZONE_PLATFORM_HINT=auto
-
-# disable wayland support for discord in flatpak (to fix keybinds not working)
-flatpak override --system --env=ELECTRON_OZONE_PLATFORM_HINT=x11 com.discordapp.Discord

@@ -144,7 +144,6 @@ modules:
         - flatpak-preinstall.service
         - configure-flatpaks.service
         - firefox-prefs.service
-        - regen-nvctk-cdi.service
         - monitor-setup-resume.service
         - wowlan-enable@phy0.service
         - ssh-monitor.service

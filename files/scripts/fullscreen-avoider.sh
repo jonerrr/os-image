@@ -44,8 +44,7 @@ fi
 mkdir -p "$DEST"
 cp -a . "$DEST/"
 
-# Install GSettings schemas.
+# Compile the extension's GSettings schemas.
 if [[ -d schemas ]]; then
-    install -m 0644 schemas/*.gschema.xml /usr/share/glib-2.0/schemas/
-    glib-compile-schemas /usr/share/glib-2.0/schemas/
+    glib-compile-schemas --strict "$DEST/schemas"
 fi
